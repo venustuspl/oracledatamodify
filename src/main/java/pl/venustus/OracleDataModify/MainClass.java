@@ -1,4 +1,5 @@
 package pl.venustus.OracleDataModify;
+import oracle.jdbc.pool.oracledatasource;
 
 import org.springframework.context.annotation.Bean;
 
@@ -6,7 +7,7 @@ import javax.sql.DataSource;
 import java.sql.SQLException;
 
 public class MainClass {
-/*
+
     @Bean
     DataSource dataSource() throws SQLException {
         OracleDataSource dataSource = new OracleDataSource();
@@ -18,5 +19,5 @@ public class MainClass {
         return dataSource;
 
     }
-*/
+
 }
