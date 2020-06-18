@@ -30,13 +30,13 @@ import java.util.Properties;
     public class OracleExample {
         // The recommended format of a connection URL is the long format with the
         // connection descriptor.
-        final static String DB_URL= "jdbc:oracle:thin:@myhost:1521/myorcldbservicename";
+        final static String DB_URL= "jdbc:oracle:thin:@//localhost:1522/orcl1";
         // For ATP and ADW - use the TNS Alias name along with the TNS_ADMIN when using 18.3 JDBC driver
         // final static String DB_URL="jdbc:oracle:thin:@wallet_dbname?TNS_ADMIN=/Users/test/wallet_dbname";
         // In case of windows, use the following URL
         // final static String DB_URL="jdbc:oracle:thin:@wallet_dbname?TNS_ADMIN=C:\\Users\\test\\wallet_dbname";
-        final static String DB_USER = "hr";
-        final static String DB_PASSWORD = "hr";
+        final static String DB_USER = "tomek";
+        final static String DB_PASSWORD = "1234";
 
         /*
          * The method gets a database connection using
@@ -80,8 +80,8 @@ import java.util.Properties;
             // Statement and ResultSet are AutoCloseable and closed automatically.
             try (Statement statement = connection.createStatement()) {
                 try (ResultSet resultSet = statement
-                        .executeQuery("select first_name, last_name from employees")) {
-                    System.out.println("FIRST_NAME" + "  " + "LAST_NAME");
+                        .executeQuery("select nazwa, placa_min from etaty")) {
+                    System.out.println("nazwa" + "  " + "placa_min");
                     System.out.println("---------------------");
                     while (resultSet.next())
                         System.out.println(resultSet.getString(1) + " "

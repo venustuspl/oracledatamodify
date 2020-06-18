@@ -16,12 +16,12 @@ import java.sql.ResultSet;
 
                 System.out.println("Sterowniki załadowane");
 
-                Connection OracleSimpleConnection=DriverManager.getConnection("jdbc:oracle:thin:@192.168.1.50:1521:orcl","login","haslo");
+                Connection OracleSimpleConnection=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1522:orcl1","tomek","1234");
 
                 System.out.println("Połączenie nawiązane");
 
                 Statement a =OracleSimpleConnection.createStatement();
-                ResultSet res = a.executeQuery("select * from AUTOR");
+                ResultSet res = a.executeQuery("select * from etaty");
 
                 System.out.println("Wyniki zapytania: ");
 
