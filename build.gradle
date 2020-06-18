@@ -23,7 +23,7 @@ dependencies {
 	compile group: 'com.oracle.database.jdbc', name: 'ucp', version: '19.6.0.0'
 	compile group: 'com.oracle.database.jdbc', name: 'ojdbc8', version: '19.6.0.0'
 	compile group: 'com.oracle.database.jdbc', name: 'ojdbc6', version: '11.2.0.4'
-	compile group: 'com.oracle', name: 'ojdbc14', version: '10.2.0.4.0'
+	//compile group: 'com.oracle', name: 'ojdbc14', version: '10.2.0.4.0'
 
 
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
