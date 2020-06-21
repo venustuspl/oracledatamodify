@@ -24,11 +24,9 @@ public class OracleSimpleConnection {
                 Statement a =OracleSimpleConnection.createStatement();
                 String myStatement = "insert into etaty(nazwa, placa_min, placa_max) values ('Mechanic" + LocalDateTime.now() + "', '8000','9000')";
                 ResultSet res0 = a.executeQuery(myStatement);
-                System.out.println("0");
                 ResultSet res1 = a.executeQuery("commit");
-                System.out.println("1");
-                ResultSet res2 = a.executeQuery("select * from etaty");
-                System.out.println("2");
+                ResultSet res2 = a.executeQuery("select * ??????????from etaty");
+
 
 
                 System.out.println("Wyniki zapytania: ");
@@ -41,7 +39,7 @@ public class OracleSimpleConnection {
             }
             catch(Exception wyjatek)
             {
-                System.out.println("Błąd");
+                System.out.println("Error: " + wyjatek.getMessage() + " " + wyjatek.getCause());
             }
 
 
