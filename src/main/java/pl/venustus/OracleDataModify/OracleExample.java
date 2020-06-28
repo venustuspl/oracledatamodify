@@ -36,7 +36,7 @@ import java.util.Properties;
         // In case of windows, use the following URL
         // final static String DB_URL="jdbc:oracle:thin:@wallet_dbname?TNS_ADMIN=C:\\Users\\test\\wallet_dbname";
         final static String DB_USER = "tomek";
-        final static String DB_PASSWORD = "1234";
+        final static String DB_PASSWORD = "tomek";
 
         /*
          * The method gets a database connection using
