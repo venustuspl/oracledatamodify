@@ -49,8 +49,8 @@ import java.util.Properties;
          */
         public static void main(String args[]) throws SQLException {
             Properties info = new Properties();
-            info.put(OracleConnection.PROXY_USER_NAME, DB_USER);
-            info.put(OracleConnection.PROXY_USER_PASSWORD, DB_PASSWORD);
+            info.put(OracleConnection.CONNECTION_PROPERTY_USER_NAME, DB_USER);
+            info.put(OracleConnection.CONNECTION_PROPERTY_PASSWORD, DB_PASSWORD);
             info.put(OracleConnection.CONNECTION_PROPERTY_CREATE_DESCRIPTOR_USE_CURRENT_SCHEMA_FOR_SCHEMA_NAME, "20");
 
 
