@@ -2,6 +2,7 @@ package pl.venustus.OracleDataModify;
 
 import com.sun.istack.NotNull;
 import oracle.jdbc.pool.OracleDataSource;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,12 +16,15 @@ import java.sql.SQLException;
 public class OracleConfiguration {
 
     @NotNull
+    @Value("${spring.datasource.username}")
     private String username;
 
     @NotNull
+    @Value("${spring.datasource.password}")
     private String password;
 
     @NotNull
+    @Value("spring.datasource.url")
     private String url;
 
     public void setUsername(String username) {
