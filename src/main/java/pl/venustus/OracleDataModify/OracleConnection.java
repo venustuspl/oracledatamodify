@@ -6,19 +6,21 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-public class Start {
+public class OracleConnection {
 
     @Autowired
     OracleConfiguration oracleConfiguration;
 
-    public void makeConnection() throws SQLException {
+    public String makeConnection() throws SQLException {
 
         DataSource dataSource = oracleConfiguration.dataSource();
 
         Connection dataConnection = dataSource.getConnection();
 
-        System.out.println(dataConnection.getClientInfo());
+        String result = dataConnection.getClientInfo().toString();
 
         dataConnection.close();
+
+        return dataConnection.getClientInfo().toString();
     }
 }
