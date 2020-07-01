@@ -41,9 +41,10 @@ public class OracleConfiguration {
         OracleDataSource dataSource = new OracleDataSource();
         dataSource.setUser(username);
         dataSource.setPassword(password);
-        dataSource.setURL(url);
+        dataSource.setURL("jdbc:oracle:thin:@//localhost:1522/orcl1");
         dataSource.setImplicitCachingEnabled(true);
         dataSource.setFastConnectionFailoverEnabled(true);
+        System.out.println("polaczenie");
         return dataSource;
     }
 }

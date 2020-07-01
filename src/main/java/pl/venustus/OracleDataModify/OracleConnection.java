@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
-import java.sql.Connection;
 import java.sql.SQLException;
 
 @Component
@@ -16,13 +15,9 @@ public class OracleConnection {
     public String makeConnection() throws SQLException {
 
         DataSource dataSource = oracleConfiguration.dataSource();
+        System.out.println("polaczenie1");
+        String result = dataSource.getConnection().getClientInfo().toString();
 
-        Connection dataConnection = dataSource.getConnection();
-
-        String result = dataConnection.getClientInfo().toString();
-
-        dataConnection.close();
-
-        return dataConnection.getClientInfo().toString();
+        return result;
     }
 }
