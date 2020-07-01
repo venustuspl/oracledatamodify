@@ -16,8 +16,8 @@ public class OracleConnection {
 
         DataSource dataSource = oracleConfiguration.dataSource();
         System.out.println("polaczenie1");
-        String result = dataSource.getConnection().getClientInfo().toString();
-
+        String result = dataSource.getConnection().getSchema().toString();
+        System.out.println("polaczenie2");
         return result;
     }
 }
