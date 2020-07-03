@@ -1,4 +1,4 @@
-echo "Oracle services stopping: "
+echo "Oracle services stopping:  "
 
 net stop "OracleJobSchedulerORCL1"
 net stop "OracleOraDB12Home2MTSRecoveryService"
