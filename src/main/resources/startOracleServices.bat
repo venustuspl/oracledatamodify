@@ -1,4 +1,5 @@
 echo "Oracle Services starting: "
+#obsługę ewentualnych błędów zrobię później
 
 net start "OracleJobSchedulerORCL1"
 net start "OracleOraDB12Home2MTSRecoveryService"
