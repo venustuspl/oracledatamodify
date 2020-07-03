@@ -6,4 +6,4 @@ net stop "OracleOraDB12Home2TNSListener"
 net stop "OracleServiceORCL1"
 net stop "OracleVssWriterORCL1"
 
-echo "Oracle services was stopped."
+echo "Oracle services was stopped. "
