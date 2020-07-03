@@ -16,16 +16,16 @@ public class OracleController {
 
 
     @Autowired
-    OracleConnection oracleConnection;
+    OracleServices oracleServices;
 
     @RequestMapping(method = RequestMethod.GET, value = "/check")
     public String getDbInfo() throws IOException, SQLException {
-        return oracleConnection.makeConnection();
+        return "test"; //oracleConnection.makeConnection();
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/getallfrometaty")
     public String getAllFromEtaty() throws IOException, SQLException {
-        return oracleConnection.executeSelectStatement();
+        return oracleServices.executeSlectStatement();
     }
 
 
