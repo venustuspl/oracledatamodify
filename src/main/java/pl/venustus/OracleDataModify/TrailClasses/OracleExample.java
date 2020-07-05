@@ -1,4 +1,4 @@
-package pl.venustus.OracleDataModify;
+package pl.venustus.OracleDataModify.TrailClasses;
  /* Copyright (c) 2015, Oracle and/or its affiliates. All rights reserved.*/
 /*
    DESCRIPTION

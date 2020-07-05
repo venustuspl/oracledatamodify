@@ -1,10 +1,11 @@
-package pl.venustus.OracleDataModify;
+package pl.venustus.OracleDataModify.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import pl.venustus.OracleDataModify.Service.OracleServices;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -28,5 +29,9 @@ public class OracleController {
         return oracleServices.executeSlectStatement();
     }
 
+    @RequestMapping(method = RequestMethod.GET, value = "/setplacaminformechanics")
+    public String setPlacaMinForMechanics() throws IOException, SQLException {
+        return oracleServices.executeSetStatus();
+    }
 
 }

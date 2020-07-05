@@ -1,4 +1,4 @@
-package pl.venustus.OracleDataModify;
+package pl.venustus.OracleDataModify.TrailClasses;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

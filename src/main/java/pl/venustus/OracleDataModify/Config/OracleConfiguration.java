@@ -1,4 +1,4 @@
-package pl.venustus.OracleDataModify;
+package pl.venustus.OracleDataModify.Config;
 
 import com.sun.istack.NotNull;
 import oracle.jdbc.pool.OracleDataSource;
