@@ -31,7 +31,7 @@ public class OracleController {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/setplacaminformechanics")
-    public ResultSet setPlacaMinForMechanics() throws IOException, SQLException {
+    public String setPlacaMinForMechanics() throws IOException, SQLException {
         return oracleServices.executeSetStatus();
     }
 

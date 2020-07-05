@@ -28,15 +28,15 @@ public class OracleServices {
     }
 
     //functions for my work
-    public ResultSet executeSetStatus() throws SQLException {
+    public String executeSetStatus() throws SQLException {
 
         Statement statement = oracleConnection.makeConnection().createStatement();
-        ResultSet rs = statement.executeQuery("UPDATE ETATY SET PLACA_MIN = 1500 WHERE NAZWA LIKE '%Mechan%'");
+        Integer rs = statement.executeUpdate("UPDATE ETATY SET PLACA_MIN = 1150 WHERE NAZWA LIKE '%Mechan%'");
         //String result = "";
         //   while (rs.next()) {
         //      System.out.println(rs.getString(1));
         //       result = result + rs.getString(1) + "\n";
         //  }
-        return rs;
+        return String.valueOf(rs);
     }
 }
