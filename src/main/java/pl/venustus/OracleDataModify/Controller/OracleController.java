@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import pl.venustus.OracleDataModify.Service.OracleServices;
 
 import java.io.IOException;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 @CrossOrigin(origins = "*")
@@ -30,7 +31,7 @@ public class OracleController {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/setplacaminformechanics")
-    public String setPlacaMinForMechanics() throws IOException, SQLException {
+    public ResultSet setPlacaMinForMechanics() throws IOException, SQLException {
         return oracleServices.executeSetStatus();
     }
 
