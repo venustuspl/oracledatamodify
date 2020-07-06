@@ -30,12 +30,15 @@ public class OracleConfiguration {
     public void setUsername(String username) {
         this.username = username;
     }
+
     public void setPassword(String password) {
         this.password = password;
     }
+
     public void setUrl(String url) {
         this.url = url;
     }
+
     @Bean
     DataSource dataSource() throws SQLException {
         OracleDataSource dataSource = new OracleDataSource();
@@ -44,7 +47,6 @@ public class OracleConfiguration {
         dataSource.setURL("jdbc:oracle:thin:@//localhost:1522/orcl1");
         dataSource.setImplicitCachingEnabled(true);
         dataSource.setFastConnectionFailoverEnabled(true);
-        System.out.println("polaczenie");
         return dataSource;
     }
 }

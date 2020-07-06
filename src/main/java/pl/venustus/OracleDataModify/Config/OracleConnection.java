@@ -12,7 +12,6 @@ public class OracleConnection {
     @Autowired
     OracleConfiguration oracleConfiguration;
 
-
     public Connection makeConnection() throws SQLException {
 
         Connection connection = oracleConfiguration.dataSource().getConnection();

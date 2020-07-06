@@ -32,11 +32,7 @@ public class OracleServices {
 
         Statement statement = oracleConnection.makeConnection().createStatement();
         Integer rs = statement.executeUpdate("UPDATE PRACOWNICY SET PLACA_DOD = 150 WHERE NAZWISKO LIKE '%JANKOWSKI%' AND ZATRUDNIONY = TO_DATE('2008/10/04', 'yyyy/mm/dd') ");
-        //String result = "";
-        //   while (rs.next()) {
-        //      System.out.println(rs.getString(1));
-        //       result = result + rs.getString(1) + "\n";
-        //  }
+
         return String.valueOf(rs);
     }
 
@@ -44,10 +40,19 @@ public class OracleServices {
     public String executeSetStatusByVariable() throws SQLException {
 
         String surname = "JANKOWSKI";
-        String data = "2008/10/04";
+        String data0 = "2008/10/04";
+        String data1 = "2008/10/04";
+        String sql = "UPDATE PRACOWNICY SET PLACA_DOD = 110 WHERE NAZWISKO LIKE '%" + surname + "%' ";
+        if (data0.length() > 0) {
+            sql = sql + "AND ZATRUDNIONY >= TO_DATE('" + data0 + "', 'yyyy/mm/dd') ";
+        }
+        if (data1.length() > 0) {
+            sql = sql + "AND ZATRUDNIONY <= TO_DATE('" + data1 + "', 'yyyy/mm/dd') ";
+        }
+        System.out.println(sql);
+
         Statement statement = oracleConnection.makeConnection().createStatement();
-        Integer rs = statement.executeUpdate("UPDATE PRACOWNICY SET PLACA_DOD = 1530 WHERE NAZWISKO LIKE '%" + surname + "%' " +
-                "AND ZATRUDNIONY = TO_DATE('" + data + "', 'yyyy/mm/dd') ");
+        Integer rs = statement.executeUpdate(sql);
 
         //String result = "";
         //   while (rs.next()) {
