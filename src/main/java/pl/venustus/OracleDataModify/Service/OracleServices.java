@@ -37,11 +37,11 @@ public class OracleServices {
     }
 
     //functions for my work
-    public String executeSetStatusByVariable() throws SQLException {
+    public String executeSetStatusByVariable(String surname, String data0, String data1) throws SQLException {
 
-        String surname = "JANKOWSKI";
-        String data0 = "2008/10/04";
-        String data1 = "2008/10/04";
+        //String surname = "JANKOWSKI";
+        //String data0 = "2008/10/04";
+        //String data1 = "2008/10/04";
         String sql = "UPDATE PRACOWNICY SET PLACA_DOD = 1 WHERE NAZWISKO LIKE '%" + surname + "%' ";
         if (data0.length() > 0) {
             sql = sql + "AND ZATRUDNIONY >= TO_DATE('" + data0 + "', 'yyyy/mm/dd') ";

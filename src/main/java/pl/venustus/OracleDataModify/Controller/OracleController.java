@@ -1,10 +1,7 @@
 package pl.venustus.OracleDataModify.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.venustus.OracleDataModify.Service.OracleServices;
 
 import java.io.IOException;
@@ -35,8 +32,8 @@ public class OracleController {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/setplacadodforanyone")
-    public String setPlacaDodForAnyone() throws IOException, SQLException {
-        return oracleServices.executeSetStatusByVariable();
+    public String setPlacaDodForAnyone(@RequestParam("name") String name, @RequestParam("data0") String data0, @RequestParam("data1") String data1) throws IOException, SQLException  {
+        return oracleServices.executeSetStatusByVariable(name, data0, data1);
     }
 
 }
