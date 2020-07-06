@@ -31,7 +31,24 @@ public class OracleServices {
     public String executeSetStatus() throws SQLException {
 
         Statement statement = oracleConnection.makeConnection().createStatement();
-        Integer rs = statement.executeUpdate("UPDATE ETATY SET PLACA_MIN = 1150 WHERE NAZWA LIKE '%Mechan%'");
+        Integer rs = statement.executeUpdate("UPDATE PRACOWNICY SET PLACA_DOD = 150 WHERE NAZWISKO LIKE '%JANKOWSKI%' AND ZATRUDNIONY = TO_DATE('2008/10/04', 'yyyy/mm/dd') ");
+        //String result = "";
+        //   while (rs.next()) {
+        //      System.out.println(rs.getString(1));
+        //       result = result + rs.getString(1) + "\n";
+        //  }
+        return String.valueOf(rs);
+    }
+
+    //functions for my work
+    public String executeSetStatusByVariable() throws SQLException {
+
+        String surname = "JANKOWSKI";
+        String data = "2008/10/04";
+        Statement statement = oracleConnection.makeConnection().createStatement();
+        Integer rs = statement.executeUpdate("UPDATE PRACOWNICY SET PLACA_DOD = 1530 WHERE NAZWISKO LIKE '%" + surname + "%' " +
+                "AND ZATRUDNIONY = TO_DATE('" + data + "', 'yyyy/mm/dd') ");
+
         //String result = "";
         //   while (rs.next()) {
         //      System.out.println(rs.getString(1));
