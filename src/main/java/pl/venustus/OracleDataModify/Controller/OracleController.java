@@ -31,6 +31,7 @@ public class OracleController {
         return oracleServices.executeSetStatus();
     }
 
+    //example controller
     @RequestMapping(method = RequestMethod.GET, value = "/setplacadodforanyone")
     public String setPlacaDodForAnyone(@RequestParam("name") String name, @RequestParam("data0") String data0, @RequestParam("data1") String data1) throws IOException, SQLException  {
         return oracleServices.executeSetStatusByVariable(name, data0, data1);
