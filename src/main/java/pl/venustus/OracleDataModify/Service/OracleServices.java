@@ -42,6 +42,7 @@ public class OracleServices {
         //String surname = "JANKOWSKI";
         //String data0 = "2008/10/04";
         //String data1 = "2008/10/04";
+        System.out.println(surname);
         String sql = "UPDATE PRACOWNICY SET PLACA_DOD = 1 WHERE NAZWISKO LIKE '%" + surname + "%' ";
         if (data0.length() > 0) {
             sql = sql + "AND ZATRUDNIONY >= TO_DATE('" + data0 + "', 'yyyy/mm/dd') ";
