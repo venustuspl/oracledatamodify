@@ -29,7 +29,20 @@
 
 <h1 align="center" style="background-color: #cffccf;">OracleApp</h1>
 <h2 align="center" style="background-color: #cffccf">Here you can do some slect/update/insert/delete statements on any Oracle database.</h2>
-
+<hr>
+1. First function - mark OR as invoiced
+<h4>Write PPE full number:</h4>
+<input id="PPE" type="text"><br>
+<br>
+<h4>Optional: Write start date: </h4>
+<br>
+<input id="data0" type="date"><br>
+<h4>Optional: Write end date: </h4>
+<input id="data1" type="date"><br>
+<br>
+<button id="markorinvoiced" onclick="markorinvoiced()">Mark OR</button>
+<h4>In this currency you your cash value is: </h4>
+<h4><p id="markedorcount">0</p></h4>
 </body>
 
 <script src="api.js"></script>
