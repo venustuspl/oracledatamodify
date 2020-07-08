@@ -20,5 +20,6 @@ function markorinvoiced(){
 
 fetch(link)
   .then(response => response.json())
-  .then(data => document.getElementById('markedorcount').innerHTML = 'dddd');
+  .then(data => document.getElementById('markedorcount').innerHTML = data);
+
 }
