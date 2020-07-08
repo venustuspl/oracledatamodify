@@ -14,9 +14,8 @@ function markorinvoiced(){
     var ppe = document.getElementById("ppe").value;
     var data0 = document.getElementById("data0").value;
     var data1 = document.getElementById("data1").value;
-
-    var link = "/setplacadodforanyone?name=" + ppe + "&data0=2000/01/01&data1=2100/01/01";
-
+//document.getElementById('testlink').innerHTML = data0);
+    var link = "/setplacadodforanyone?name=" + ppe  + "&data0=" + data0 + "&data1=" + data1;
 
 fetch(link)
   .then(response => response.json())
