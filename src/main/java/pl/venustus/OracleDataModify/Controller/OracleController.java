@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import pl.venustus.OracleDataModify.Service.OracleServices;
 
 import java.io.IOException;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 @CrossOrigin(origins = "*")
@@ -31,6 +32,11 @@ public class OracleController {
         return oracleServices.executeSetStatus();
     }
 
+    //example controller
+    @RequestMapping(method = RequestMethod.GET, value = "/getrowwithfulfilled")
+    public ResultSet getPlacaDodForAnyone(@RequestParam("name") String name, @RequestParam("data0") String data0, @RequestParam("data1") String data1) throws IOException, SQLException  {
+        return oracleServices.executeSelectStatusByVariable(name, data0, data1);
+    }
     //example controller
     @RequestMapping(method = RequestMethod.GET, value = "/setplacadodforanyone")
     public String setPlacaDodForAnyone(@RequestParam("name") String name, @RequestParam("data0") String data0, @RequestParam("data1") String data1) throws IOException, SQLException  {

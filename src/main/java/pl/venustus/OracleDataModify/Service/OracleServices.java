@@ -36,6 +36,32 @@ public class OracleServices {
         return String.valueOf(rs);
     }
 
+    public ResultSet executeSelectStatusByVariable(String surname, String data0, String data1) throws SQLException {
+
+        //String surname = "JANKOWSKI";
+        //String data0 = "2008/10/04";
+        //String data1 = "2008/10/04";
+        System.out.println(surname);
+        String sql = "SELECT * FROM PRACOWNICY NAZWISKO LIKE '%" + surname + "%' ";
+        if (data0.length() > 0) {
+            sql = sql + "AND ZATRUDNIONY >= TO_DATE('" + data0 + "', 'yyyy/mm/dd') ";
+        }
+        if (data1.length() > 0) {
+            sql = sql + "AND ZATRUDNIONY <= TO_DATE('" + data1 + "', 'yyyy/mm/dd') ";
+        }
+        System.out.println(sql);
+
+        Statement statement = oracleConnection.makeConnection().createStatement();
+        ResultSet rs = statement.executeQuery(sql);
+
+        String result = "";
+           while (rs.next()) {
+              System.out.println(rs.getString(1));
+               result = result + rs.getString(1) + "\n";
+          }
+        return rs;
+    }
+
     //functions for my work
     public String executeSetStatusByVariable(String surname, String data0, String data1) throws SQLException {
 
@@ -62,4 +88,6 @@ public class OracleServices {
         //  }
         return String.valueOf(rs);
     }
+
+
 }
