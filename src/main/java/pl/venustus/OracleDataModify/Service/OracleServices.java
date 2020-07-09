@@ -42,7 +42,7 @@ public class OracleServices {
         //String data0 = "2008/10/04";
         //String data1 = "2008/10/04";
         System.out.println(surname);
-        String sql = "SELECT * FROM PRACOWNICY NAZWISKO LIKE '%" + surname + "%' ";
+        String sql = "SELECT * FROM PRACOWNICY WHERE NAZWISKO LIKE '%" + surname + "%' ";
         if (data0.length() > 0) {
             sql = sql + "AND ZATRUDNIONY >= TO_DATE('" + data0 + "', 'yyyy/mm/dd') ";
         }
