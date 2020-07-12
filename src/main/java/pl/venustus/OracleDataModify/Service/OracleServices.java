@@ -52,20 +52,22 @@ public class OracleServices {
         System.out.println(sql);
 
         String result = "";
+        Integer rowCount = 0;
 
         try {
             Statement statement = oracleConnection.makeConnection().createStatement();
             ResultSet rs = statement.executeQuery(sql);
             while (rs.next()) {
-                System.out.println(rs.getString(1));
-                result = result + rs.getString(1) + "\n";
+                System.out.println(rs.getString(2));
+                result = result + rs.getString(2) + "\n";
+                rowCount++;
             }
         } catch (Exception e) {
             result = e.getMessage();
+            System.out.println(result);
         }
 
-
-        return result;
+        return String.valueOf(rowCount);
     }
 
     //functions for my work
@@ -83,16 +85,17 @@ public class OracleServices {
             sql = sql + "AND ZATRUDNIONY <= TO_DATE('" + data1 + "', 'yyyy/mm/dd') ";
         }
         System.out.println(sql);
+        String result = "";
+        try {
+            Statement statement = oracleConnection.makeConnection().createStatement();
+            Integer rs = statement.executeUpdate(sql);
+            result = String.valueOf(rs);
+        } catch (
+                Exception e) {
+            result = e.getMessage();
 
-        Statement statement = oracleConnection.makeConnection().createStatement();
-        Integer rs = statement.executeUpdate(sql);
-
-        //String result = "";
-        //   while (rs.next()) {
-        //      System.out.println(rs.getString(1));
-        //       result = result + rs.getString(1) + "\n";
-        //  }
-        return String.valueOf(rs);
+        }
+        return String.valueOf(result);
     }
 
 

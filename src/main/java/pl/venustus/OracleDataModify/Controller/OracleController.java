@@ -16,7 +16,7 @@ public class OracleController {
     @Autowired
     OracleServices oracleServices;
 
-    @RequestMapping(method = RequestMethod.GET, value = "/check")
+    @RequestMapping(method = RequestMethod.GET, value = "/check1")
     public String getDbInfo() throws IOException, SQLException {
         return "test"; //oracleConnection.makeConnection();
     }
