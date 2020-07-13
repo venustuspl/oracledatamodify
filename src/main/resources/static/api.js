@@ -11,7 +11,7 @@ function getnotinvoicedor(){
     var ppe = document.getElementById("ppe").value;
     var data0 = document.getElementById("data0").value;
     var data1 = document.getElementById("data1").value;
-    var link = "/getrowwithfulfilled?name=" + ppe  + "&data0=" + data0 + "&data1=" + data1;
+    var link = "/getnotinvoicedor?name=" + ppe  + "&data0=" + data0 + "&data1=" + data1;
 
 fetch(link)
     .then((resp) => resp.json()) // Transform the data into json
