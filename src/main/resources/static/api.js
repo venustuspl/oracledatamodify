@@ -5,7 +5,7 @@ function createNode(element) {
 function append(parent, el) {
     return parent.appendChild(el); // Append the second parameter(element) to the first one
 }
-
+const opt = document.getElementById('notinvoicedorlist');
 function getnotinvoicedor(){
 
     var ppe = document.getElementById("ppe").value;
@@ -14,9 +14,17 @@ function getnotinvoicedor(){
     var link = "/getrowwithfulfilled?name=" + ppe  + "&data0=" + data0 + "&data1=" + data1;
 
 fetch(link)
-  .then(response => response.json())
-  .then(data => document.getElementById('notinvoicedorlist').innerHTML = data);
-
+    .then((resp) => resp.json()) // Transform the data into json
+    .then(function (data) {
+        let rates = data; // Get the results
+        return rates.map(function (rate) { // Map through the results and for each run the code below
+            let li = createNode('li'), //  Create the elements we need
+            span = createNode('span');
+            li.innerHTML = rate; // Make the HTML of our span to be the first and last name of our author
+            append(li, span);
+            append(opt, li);
+        })
+    });
 }
 
 function getnotinvoicedorold(){
