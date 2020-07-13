@@ -7,6 +7,8 @@ import pl.venustus.OracleDataModify.Config.OracleConnection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.HashMap;
+import java.util.Map;
 
 @Repository
 public class OracleServices {
@@ -36,7 +38,7 @@ public class OracleServices {
         return String.valueOf(rs);
     }
 
-    public String executeSelectStatusByVariable(String surname, String data0, String data1) throws SQLException {
+    public Map<Integer, String> executeSelectStatusByVariable(String surname, String data0, String data1) throws SQLException {
 
         //String surname = "JANKOWSKI";
         //String data0 = "2008/10/04";
@@ -53,6 +55,7 @@ public class OracleServices {
 
         String result = "";
         Integer rowCount = 0;
+        Map<Integer, String> resultMap = new HashMap<>();
 
         try {
             Statement statement = oracleConnection.makeConnection().createStatement();
@@ -60,6 +63,9 @@ public class OracleServices {
             while (rs.next()) {
                 System.out.println(rs.getString(2));
                 result = result + rs.getString(2) + "\n";
+                resultMap.put(rowCount, rs.getString(2) + " | " + rs.getString(2)  + " | " + rs.getString(2) );
+
+
                 rowCount++;
             }
         } catch (Exception e) {
@@ -67,7 +73,7 @@ public class OracleServices {
             System.out.println(result);
         }
 
-        return String.valueOf(rowCount);
+        return resultMap;
     }
 
     //functions for my work
