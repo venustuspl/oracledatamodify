@@ -1,18 +1,10 @@
-<!--
-  ~ Copyright (c) 2020. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  ~ Morbi non lorem porttitor neque feugiat blandit. Ut vitae ipsum eget quam lacinia accumsan.
-  ~ Etiam sed turpis ac ipsum condimentum fringilla. Maecenas magna.
-  ~ Proin dapibus sapien vel ante. Aliquam erat volutpat. Pellentesque sagittis ligula eget metus.
-  ~ Vestibulum commodo. Ut rhoncus gravida arcu.
-  -->
-
 <!DOCTYPE html>
 <head>
 
     <link href="favicon.ico" rel="shortcut icon"/>
     <meta charset="UTF-">
     <title>OracleApp</title>
-    <META CONTENT="Oracle, database, webservice" NAME="KEYWORDS">
+    <META CONTENT="Oracle, database, webservice, venustus" NAME="KEYWORDS">
     <link href="style.css" rel="stylesheet" type="text/css"/>
 
     <meta content="width=device-width,initial-scale=1" name="viewport">
@@ -39,11 +31,15 @@
 <h4>Enter end date: </h4>
 <input id="data1" type="date" value="2021-01-01"<br>
 <br>
-<div id="notinvoicedorlist">Below list founed OR:</div>
+<div>Below list founed OR:</div>
+<span id="notinvoicedorlist"></span>
 <br>
 <button id="notinvoicedorbutton" onclick="getnotinvoicedor()">Find not invoiced OR</button>
 <button id="markorinvoiced" onclick="markorinvoiced()">Mark OR</button>
-<h4><div id="markedorcount">0</div>OR was changed</h4>
+<h4>
+    <div id="markedorcount">0</div>
+    OR was changed
+</h4>
 
 </body>
 
