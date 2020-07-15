@@ -16,33 +16,31 @@ public class OracleServices {
     @Autowired
     OracleConnection oracleConnection;
 
-    //test function
-    public String executeSlectStatement() throws SQLException {
+    /*
+        //test function
+        public String executeSlectStatement() throws SQLException {
 
-        Statement statement = oracleConnection.makeConnection().createStatement();
-        ResultSet rs = statement.executeQuery("SELECT * FROM ETATY");
-        String result = "";
-        while (rs.next()) {
-            System.out.println(rs.getString(1));
-            result = result + rs.getString(1) + "\n";
+            Statement statement = oracleConnection.makeConnection().createStatement();
+            ResultSet rs = statement.executeQuery("SELECT * FROM ETATY");
+            String result = "";
+            while (rs.next()) {
+                System.out.println(rs.getString(1));
+                result = result + rs.getString(1) + "\n";
+            }
+            return result;
         }
-        return result;
-    }
 
-    //functions for my work
-    public String executeSetStatus() throws SQLException {
+        //functions for my work
+        public String executeSetStatus() throws SQLException {
 
-        Statement statement = oracleConnection.makeConnection().createStatement();
-        Integer rs = statement.executeUpdate("UPDATE PRACOWNICY SET PLACA_DOD = 150 WHERE NAZWISKO LIKE '%JANKOWSKI%' AND ZATRUDNIONY = TO_DATE('2008/10/04', 'yyyy/mm/dd') ");
+            Statement statement = oracleConnection.makeConnection().createStatement();
+            Integer rs = statement.executeUpdate("UPDATE PRACOWNICY SET PLACA_DOD = 150 WHERE NAZWISKO LIKE '%JANKOWSKI%' AND ZATRUDNIONY = TO_DATE('2008/10/04', 'yyyy/mm/dd') ");
 
-        return String.valueOf(rs);
-    }
-
+            return String.valueOf(rs);
+        }
+    */
     public List<String> executeSelectStatusByVariable(String surname, String data0, String data1) throws SQLException {
 
-        //String surname = "JANKOWSKI";
-        //String data0 = "2008/10/04";
-        //String data1 = "2008/10/04";
         System.out.println(surname);
         String sql = "SELECT * FROM PRACOWNICY WHERE NAZWISKO LIKE '%" + surname + "%' ";
         if (data0.length() > 0) {
@@ -63,7 +61,7 @@ public class OracleServices {
             while (rs.next()) {
                 System.out.println(rs.getString(2));
                 result = result + rs.getString(2) + "\n";
-                resultList.add( rs.getString(2) + " | " + rs.getString(3) + " | " + rs.getString(4));
+                resultList.add(rs.getString(2) + " | " + rs.getString(3) + " | " + rs.getString(4));
                 rowCount++;
             }
         } catch (Exception e) {
@@ -71,15 +69,12 @@ public class OracleServices {
             System.out.println(result);
         }
 
-        return  resultList;
+        return resultList;
     }
 
     //functions for my work
     public String executeSetStatusByVariable(String surname, String data0, String data1) throws SQLException {
 
-        //String surname = "JANKOWSKI";
-        //String data0 = "2008/10/04";
-        //String data1 = "2008/10/04";
         System.out.println(surname);
         String sql = "UPDATE PRACOWNICY SET PLACA_DOD = 1 WHERE NAZWISKO LIKE '%" + surname + "%' ";
         if (data0.length() > 0) {

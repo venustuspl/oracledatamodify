@@ -15,8 +15,6 @@ public class OracleConnection {
     public Connection makeConnection() throws SQLException {
 
         Connection connection = oracleConfiguration.dataSource().getConnection();
-        //String result = dataSource.getConnection().getSchema().toString();
-        //dataSource.getConnection().createStatement();
 
         return connection;
     }
