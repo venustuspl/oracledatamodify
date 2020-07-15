@@ -5,8 +5,10 @@ function createNode(element) {
 function append(parent, el) {
     return parent.appendChild(el); // Append the second parameter(element) to the first one
 }
-const opt = document.getElementById('notinvoicedorlist');
+const niol = document.getElementById('notinvoicedorlist');
 function getnotinvoicedor(){
+
+niol.innerHTML = '';
 
     var ppe = document.getElementById("ppe").value;
     var data0 = document.getElementById("data0").value;
@@ -22,11 +24,11 @@ fetch(link)
             span = createNode('span');
             li.innerHTML = rate; // Make the HTML of our span to be the first and last name of our author
             append(li, span);
-            append(opt, li);
+            append(niol, li);
         })
     });
 }
-
+/*
 function getnotinvoicedorold(){
 
     var ppe = document.getElementById("ppe").value;
@@ -39,7 +41,7 @@ fetch(link)
   .then(data => document.getElementById('notinvoicedorlist').innerHTML = data);
 
 }
-
+*/
 function markorinvoiced(){
 
     var ppe = document.getElementById("ppe").value;
