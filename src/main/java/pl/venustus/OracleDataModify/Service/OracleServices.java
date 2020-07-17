@@ -80,21 +80,54 @@ public class OracleServices {
         return String.valueOf(result);
     }
 
-    public String selectAllUserTables() throws SQLException {
+    public List<String> selectAllUserTables() throws SQLException {
 
         String sql = "SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%" + username.toUpperCase() + "%'";
         System.out.println(sql);
         String result = "";
+        Integer rowCount = 0;
+        List<String> resultList = new ArrayList<>();
+
         try {
             Statement statement = oracleConnection.makeConnection().createStatement();
-            Integer rs = statement.executeUpdate(sql);
-            result = String.valueOf(rs);
-        } catch (
-                Exception e) {
+            ResultSet rs = statement.executeQuery(sql);
+            while (rs.next()) {
+                System.out.println(rs.getString(2));
+                result = result + rs.getString(2) + "\n";
+                resultList.add(rs.getString(2));
+                rowCount++;
+            }
+        } catch (Exception e) {
             result = e.getMessage();
-
+            System.out.println(result);
         }
-        return result;
+
+        return resultList;
     }
 
+    public List<String> selectAllcolumsFromTable(String tableName) throws SQLException {
+
+        String sql = "SELECT COLUMN_NAME FROM ALL_TAB_COLS WHERE TABLE_NAME LIKE '%" + tableName.toUpperCase() +
+                "%' AND OWNER LIKE '%" + username.toUpperCase() + "%'";
+        System.out.println(sql);
+        String result = "";
+        Integer rowCount = 0;
+        List<String> resultList = new ArrayList<>();
+
+        try {
+            Statement statement = oracleConnection.makeConnection().createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            while (rs.next()) {
+                System.out.println(rs.getString(1));
+                result = result + rs.getString(1) + "\n";
+                resultList.add(rs.getString(1));
+                rowCount++;
+            }
+        } catch (Exception e) {
+            result = e.getMessage();
+            System.out.println(result);
+        }
+
+        return resultList;
+    }
 }

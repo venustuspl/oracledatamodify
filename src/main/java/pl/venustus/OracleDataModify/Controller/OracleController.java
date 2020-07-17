@@ -28,7 +28,7 @@ public class OracleController {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/getallusertables")
-    public String getallusertables() throws IOException, SQLException {
+    public List<String> getallusertables() throws IOException, SQLException {
         return oracleServices.selectAllUserTables();
     }
 
