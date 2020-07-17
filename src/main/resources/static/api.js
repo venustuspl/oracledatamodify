@@ -47,7 +47,7 @@ const aut = document.getElementById('allusertables');
 function getallusertables(){
 
 aut.innerHTML = '';
-   var link = "/getallusertables;
+   var link = "/getallusertables";
 
 fetch(link)
     .then((resp) => resp.json()) // Transform the data into json
