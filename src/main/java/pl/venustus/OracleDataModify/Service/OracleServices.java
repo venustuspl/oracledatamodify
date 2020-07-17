@@ -1,6 +1,8 @@
 package pl.venustus.OracleDataModify.Service;
 
+import com.sun.istack.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 import pl.venustus.OracleDataModify.Config.OracleConnection;
 
@@ -13,32 +15,13 @@ import java.util.List;
 @Repository
 public class OracleServices {
 
+    @NotNull
+    @Value("${spring.datasource.username}")
+    private String username;
+
     @Autowired
     OracleConnection oracleConnection;
 
-    /*
-        //test function
-        public String executeSlectStatement() throws SQLException {
-
-            Statement statement = oracleConnection.makeConnection().createStatement();
-            ResultSet rs = statement.executeQuery("SELECT * FROM ETATY");
-            String result = "";
-            while (rs.next()) {
-                System.out.println(rs.getString(1));
-                result = result + rs.getString(1) + "\n";
-            }
-            return result;
-        }
-
-        //functions for my work
-        public String executeSetStatus() throws SQLException {
-
-            Statement statement = oracleConnection.makeConnection().createStatement();
-            Integer rs = statement.executeUpdate("UPDATE PRACOWNICY SET PLACA_DOD = 150 WHERE NAZWISKO LIKE '%JANKOWSKI%' AND ZATRUDNIONY = TO_DATE('2008/10/04', 'yyyy/mm/dd') ");
-
-            return String.valueOf(rs);
-        }
-    */
     public List<String> executeSelectStatusByVariable(String surname, String data0, String data1) throws SQLException {
 
         System.out.println(surname);
@@ -97,5 +80,21 @@ public class OracleServices {
         return String.valueOf(result);
     }
 
+    public String selectAllUserTables() throws SQLException {
+
+        String sql = "SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%" + username.toUpperCase() + "%'";
+        System.out.println(sql);
+        String result = "";
+        try {
+            Statement statement = oracleConnection.makeConnection().createStatement();
+            Integer rs = statement.executeUpdate(sql);
+            result = String.valueOf(rs);
+        } catch (
+                Exception e) {
+            result = e.getMessage();
+
+        }
+        return String.valueOf(result);
+    }
 
 }

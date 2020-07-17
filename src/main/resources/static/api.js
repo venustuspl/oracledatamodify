@@ -42,3 +42,23 @@ fetch(link)
   .then(data => document.getElementById('markedorcount').innerHTML = data);
 
 }
+
+const aut = document.getElementById('allusertables');
+function getallusertables(){
+
+aut.innerHTML = '';
+   var link = "/getallusertables;
+
+fetch(link)
+    .then((resp) => resp.json()) // Transform the data into json
+    .then(function (data) {
+        let rates = data; // Get the results
+        return rates.map(function (rate) { // Map through the results and for each run the code below
+            let li = createNode('li'), //  Create the elements we need
+            span = createNode('span');
+            li.innerHTML = rate; // Make the HTML of our span to be the first and last name of our author
+            append(li, span);
+            append(aut, li);
+        })
+    });
+}
