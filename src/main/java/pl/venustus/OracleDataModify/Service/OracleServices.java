@@ -94,7 +94,7 @@ public class OracleServices {
             result = e.getMessage();
 
         }
-        return String.valueOf(result);
+        return result;
     }
 
 }
