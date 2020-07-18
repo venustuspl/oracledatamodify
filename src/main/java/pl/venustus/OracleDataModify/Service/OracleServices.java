@@ -133,7 +133,7 @@ public class OracleServices {
 
     public List<String> getDataFromUserSelect(String tableName, String columnName, String columnValue) throws SQLException {
 
-        String sql = "SELECT * FROM " + tableName + " WHERE " + columnName + " LIKE '%" + columnName + "%'";
+        String sql = "SELECT * FROM " + tableName + " WHERE " + columnName + " LIKE '%" + columnValue + "%'";
         System.out.println(sql);
         String result = "";
         Integer rowCount = 0;
