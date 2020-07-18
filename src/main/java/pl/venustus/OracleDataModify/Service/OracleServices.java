@@ -130,4 +130,29 @@ public class OracleServices {
 
         return resultList;
     }
+
+    public List<String> getDataFromUserSelect(String tableName, String columnName, String columnValue) throws SQLException {
+
+        String sql = "SELECT * FROM " + tableName + " WHERE " + columnName + " LIKE '%" + columnName + "%'";
+        System.out.println(sql);
+        String result = "";
+        Integer rowCount = 0;
+        List<String> resultList = new ArrayList<>();
+
+        try {
+            Statement statement = oracleConnection.makeConnection().createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            while (rs.next()) {
+                System.out.println(rs.getString(1));
+                result = result + rs.getString(1) + "\n";
+                resultList.add(rs.getString(1));
+                rowCount++;
+            }
+        } catch (Exception e) {
+            result = e.getMessage();
+            System.out.println(result);
+        }
+
+        return resultList;
+    }
 }

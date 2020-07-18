@@ -23,18 +23,25 @@ public class OracleController {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/marknotinvoicedor")
-    public String marknotinvoicedor(@RequestParam("name") String name, @RequestParam("data0") String data0, @RequestParam("data1") String data1) throws IOException, SQLException {
+    public String markNotInvoicedOr(@RequestParam("name") String name, @RequestParam("data0") String data0, @RequestParam("data1") String data1) throws IOException, SQLException {
         return oracleServices.executeSetStatusByVariable(name, data0, data1);
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/getallusertables")
-    public List<String> getallusertables() throws IOException, SQLException {
+    public List<String> getAllUserTables() throws IOException, SQLException {
         return oracleServices.selectAllUserTables();
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/getalltablecolums")
-    public List<String> getalltablecolums(@RequestParam("tablename") String tablename) throws SQLException {
+    public List<String> getAllTableColumns(@RequestParam("tablename") String tablename) throws SQLException {
         return oracleServices.selectAllcolumsFromTable(tablename);
     }
 
+    @RequestMapping(method = RequestMethod.GET, value = "/userqueryresult")
+    public List<String> getDataFromUserQuery(@RequestParam("tablename") String tablename,
+                                             @RequestParam("columnname") String columnname,
+                                             @RequestParam("columnvalue") String columnvalue)
+            throws SQLException {
+        return oracleServices.getDataFromUserSelect(tablename, columnname, columnvalue);
+    }
 }

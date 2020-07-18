@@ -7,6 +7,9 @@ function append(parent, el) {
 }
 
 const niol = document.getElementById('notinvoicedorlist');
+const aut = document.getElementById('allusertables');
+const acot = document.getElementById('allcolumsoftable');
+const uqr = document.getElementById('userqueryresult');
 function getnotinvoicedor(){
 
 niol.innerHTML = '';
@@ -43,8 +46,6 @@ fetch(link)
 
 }
 
-const aut = document.getElementById('allusertables');
-
 fetch("/getallusertables")
     .then((resp) => resp.json()) // Transform the data into json
     .then(function (data) {
@@ -58,8 +59,6 @@ fetch("/getallusertables")
              append(aut, li);
         })
     });
-
-const acot = document.getElementById('allcolumsoftable');
 
 function getalltablecolums(){
 var tablename = document.getElementById("allusertables").value;
@@ -77,6 +76,28 @@ fetch(linktablecolums)
              li.innerHTML = `${rate}`; // Make the HTML of our span to be the first and last name of our author
              append(li, span);
              append(acot, li);
+        })
+    });
+
+}
+
+function getdatafromuserselect(){
+var tablename = document.getElementById("allusertables").value;
+var columname = document.getElementById("allcolumsoftable").value;
+var columnvalue = document.getElementById("columnvalue").value;
+var querylink = "/userqueryresult?tablename=" + tablename + "&columname=" + columname + "&columnname=" + columnvalue;
+
+uqr.innerHTML = '';
+fetch(querylink)
+    .then((resp) => resp.json()) // Transform the data into json
+    .then(function (data) {
+        let rates = data; // Get the results
+        return rates.map(function (rate) { // Map through the results and for each run the code below
+            let li = createNode('li'), //  Create the elements we need
+            span = createNode('span');
+            li.innerHTML = rate; // Make the HTML of our span to be the first and last name of our author
+            append(li, span);
+            append(uqr, li);
         })
     });
 
