@@ -44,21 +44,40 @@ fetch(link)
 }
 
 const aut = document.getElementById('allusertables');
-function getallusertables(){
 
-aut.innerHTML = '';
-   var link = "/getallusertables";
-
-fetch(link)
+fetch("/getallusertables")
     .then((resp) => resp.json()) // Transform the data into json
     .then(function (data) {
         let rates = data; // Get the results
         return rates.map(function (rate) { // Map through the results and for each run the code below
-            let li = createNode('li'), //  Create the elements we need
-            span = createNode('span');
-            li.innerHTML = rate; // Make the HTML of our span to be the first and last name of our author
-            append(li, span);
-            append(aut, li);
+             let li = createNode('option'), //  Create the elements we need
+             span = createNode('span');
+             li.value = `${rate}`;
+             li.innerHTML = `${rate}`; // Make the HTML of our span to be the first and last name of our author
+             append(li, span);
+             append(aut, li);
         })
     });
+
+const acot = document.getElementById('allcolumsoftable');
+
+function getalltablecolums(){
+var tablename = document.getElementById("allusertables").value;
+var linktablecolums = "/getalltablecolums?tablename=" + tablename;
+
+acot.innerHTML = '';
+fetch(linktablecolums)
+    .then((resp) => resp.json()) // Transform the data into json
+    .then(function (data) {
+        let rates = data; // Get the results
+        return rates.map(function (rate) { // Map through the results and for each run the code below
+             let li = createNode('option'), //  Create the elements we need
+             span = createNode('span');
+             li.value = `${rate}`;
+             li.innerHTML = `${rate}`; // Make the HTML of our span to be the first and last name of our author
+             append(li, span);
+             append(acot, li);
+        })
+    });
+
 }

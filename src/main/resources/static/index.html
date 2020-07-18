@@ -44,11 +44,14 @@
 
 
 <h3> 2. Second function - check any value in database</h3>
-<div>Below list user tabels:</div>
-<span id="allusertables"></span>
+<h4>Select table name: </h4>
+<select id="allusertables" name="allusertableslist">
+</select>
 <br>
-<button id="getallusertables" onclick="getallusertables()">Show user tables</button>
-
+<h4>Select table column name:</h4>
+<select id="allcolumsoftable" name="allcolumsoftablelist">
+</select>
+<button id="allcolumsoftablebutton" onclick="getalltablecolums()">Show all colums of table</button>
 
 </body>
 
