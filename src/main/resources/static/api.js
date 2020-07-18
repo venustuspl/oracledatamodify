@@ -83,10 +83,11 @@ fetch(linktablecolums)
 
 function getdatafromuserselect(){
 var tablename = document.getElementById("allusertables").value;
-var columname = document.getElementById("allcolumsoftable").value;
+var columnname = document.getElementById("allcolumsoftable").value;
 var columnvalue = document.getElementById("columnvalue").value;
-var querylink = "/userqueryresult?tablename=" + tablename + "&columname=" + columname + "&columnname=" + columnvalue;
-
+console.log(columnname);
+var querylink = "/userqueryresult?tablename=" + tablename + "&columnname=" + columnname + "&columnvalue=" + columnvalue;
+console.log(querylink);
 uqr.innerHTML = '';
 fetch(querylink)
     .then((resp) => resp.json()) // Transform the data into json
