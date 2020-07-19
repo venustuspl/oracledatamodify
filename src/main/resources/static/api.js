@@ -85,10 +85,12 @@ function getdatafromuserselect(){
 var tablename = document.getElementById("allusertables").value;
 var columnname = document.getElementById("allcolumsoftable").value;
 var columnvalue = document.getElementById("columnvalue").value;
-console.log(columnname);
 var querylink = "/userqueryresult?tablename=" + tablename + "&columnname=" + columnname + "&columnvalue=" + columnvalue;
-console.log(querylink);
-document.getElementById("userquery").innerHTML("SELECT * FROM " + tablename + " WHERE " + columnname + " LIKE '%" + columnvalue + "%'");
+
+//var query = "SELECT * FROM " + tablename + " WHERE " + columnname + " LIKE '%" + columnvalue + "%'";
+//console.log(query);
+document.getElementById("userquery").innerHTML = "SELECT * FROM " + tablename + " WHERE " + columnname + " LIKE '%" + columnvalue + "%'";
+
 uqr.innerHTML = '';
 fetch(querylink)
     .then((resp) => resp.json()) // Transform the data into json
