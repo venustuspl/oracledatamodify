@@ -77,7 +77,7 @@ public class OracleServices {
             result = e.getMessage();
 
         }
-        return String.valueOf(result);
+        return result;
     }
 
     public List<String> selectAllUserTables() throws SQLException {
@@ -154,5 +154,26 @@ public class OracleServices {
         }
 
         return resultList;
+    }
+
+    public String updateDataFromUserSelect(String tablename, String column,
+                                           String oldcolumnvalue, String newcolumnvalue
+    ) throws SQLException {
+
+        String sql = "UPDATE " + tablename + " SET " + column + " = " + newcolumnvalue + " WHERE " +
+                column + "LIKE '%" + oldcolumnvalue + "%' ";
+
+        System.out.println(sql);
+        String result = "";
+        try {
+            Statement statement = oracleConnection.makeConnection().createStatement();
+            Integer rs = statement.executeUpdate(sql);
+            result = String.valueOf(rs);
+        } catch (
+                Exception e) {
+            result = e.getMessage();
+
+        }
+        return result;
     }
 }
