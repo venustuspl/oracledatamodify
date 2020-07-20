@@ -45,8 +45,9 @@ fetch(link)
   .then(response => response.json())
   .then(data => document.getElementById('markedorcount').innerHTML = data);
 
-}
 
+}
+function getallusertables(){
 fetch("/getallusertables")
     .then((resp) => resp.json()) // Transform the data into json
     .then(function (data) {
@@ -60,6 +61,7 @@ fetch("/getallusertables")
              append(aut, li);
         })
     });
+}
 
 function getalltablecolums(){
 var tablename = document.getElementById("allusertables").value;
@@ -106,7 +108,7 @@ fetch(querylink)
         })
     });
 
-
+}
 function updatedatafromuserselect(){
 var tablename = document.getElementById("allusertables").value;
 var columnname = document.getElementById("allcolumsoftable").value;
@@ -117,16 +119,7 @@ var updatequerylink = "/updateuserqueryresult?tablename=" + tablename + "&column
 
 ur.innerHTML = '';
 fetch(updatequerylink)
-    .then((resp) => resp.json()) // Transform the data into json
-    .then(function (data) {
-        let rates = data; // Get the results
-        return rates.map(function (rate) { // Map through the results and for each run the code below
-            let li = createNode('li'), //  Create the elements we need
-            span = createNode('span');
-            li.innerHTML = rate; // Make the HTML of our span to be the first and last name of our author
-            append(li, span);
-            append(ur, li);
-        })
-    });
+      .then(response => response.json())
+      .then(data => ur.innerHTML = data);
 
 }

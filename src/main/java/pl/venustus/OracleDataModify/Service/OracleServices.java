@@ -160,8 +160,8 @@ public class OracleServices {
                                            String oldcolumnvalue, String newcolumnvalue
     ) throws SQLException {
 
-        String sql = "UPDATE " + tablename + " SET " + column + " = " + newcolumnvalue + " WHERE " +
-                column + "LIKE '%" + oldcolumnvalue + "%' ";
+        String sql = "UPDATE " + tablename + " SET " + column + " = '" + newcolumnvalue + "' WHERE " +
+                column + " LIKE '%" + oldcolumnvalue + "%' ";
 
         System.out.println(sql);
         String result = "";
