@@ -44,4 +44,13 @@ public class OracleController {
             throws SQLException {
         return oracleServices.getDataFromUserSelect(tablename, columnname, columnvalue);
     }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/updateuserqueryresult")
+    public String updateDataFromUserQuery(@RequestParam("tablename") String tablename,
+                                          @RequestParam("columnname") String columnname,
+                                          @RequestParam("oldcolumnvalue") String oldcolumnvalue,
+                                          @RequestParam("newcolumnvalue") String newcolumnvalue)
+            throws SQLException {
+        return oracleServices.updateDataFromUserSelect(tablename, columnname, oldcolumnvalue, newcolumnvalue);
+    }
 }

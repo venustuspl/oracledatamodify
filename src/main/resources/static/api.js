@@ -10,6 +10,7 @@ const niol = document.getElementById('notinvoicedorlist');
 const aut = document.getElementById('allusertables');
 const acot = document.getElementById('allcolumsoftable');
 const uqr = document.getElementById('userqueryresult');
+const ur = document.getElementById('updatedrows');
 function getnotinvoicedor(){
 
 niol.innerHTML = '';
@@ -102,6 +103,29 @@ fetch(querylink)
             li.innerHTML = rate; // Make the HTML of our span to be the first and last name of our author
             append(li, span);
             append(uqr, li);
+        })
+    });
+
+
+function updatedatafromuserselect(){
+var tablename = document.getElementById("allusertables").value;
+var columnname = document.getElementById("allcolumsoftable").value;
+var oldcolumnvalue = document.getElementById("columnvalue").value;
+var newcolumnvalue = document.getElementById("newcolumnvalue").value;
+var updatequerylink = "/updateuserqueryresult?tablename=" + tablename + "&columnname=" + columnname + "&oldcolumnvalue="
+ + oldcolumnvalue + "&newcolumnvalue=" + newcolumnvalue;
+
+ur.innerHTML = '';
+fetch(updatequerylink)
+    .then((resp) => resp.json()) // Transform the data into json
+    .then(function (data) {
+        let rates = data; // Get the results
+        return rates.map(function (rate) { // Map through the results and for each run the code below
+            let li = createNode('li'), //  Create the elements we need
+            span = createNode('span');
+            li.innerHTML = rate; // Make the HTML of our span to be the first and last name of our author
+            append(li, span);
+            append(ur, li);
         })
     });
 
