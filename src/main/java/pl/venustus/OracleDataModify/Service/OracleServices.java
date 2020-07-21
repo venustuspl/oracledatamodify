@@ -135,7 +135,6 @@ public class OracleServices {
 
         String sql = "SELECT * FROM " + tableName + " WHERE " + columnName + " LIKE '%" + columnValue + "%'";
         System.out.println(sql);
-        String result = "";
         Integer rowCount = 0;
         List<String> resultList = new ArrayList<>();
 
@@ -144,13 +143,10 @@ public class OracleServices {
             ResultSet rs = statement.executeQuery(sql);
             while (rs.next()) {
                 System.out.println(rs.getString(1));
-                result = result + rs.getString(1) + "\n";
                 resultList.add(rs.getString(1));
-                rowCount++;
             }
         } catch (Exception e) {
-            result = e.getMessage();
-            System.out.println(result);
+            resultList.add(e.getMessage());
         }
 
         return resultList;
@@ -169,9 +165,9 @@ public class OracleServices {
             Statement statement = oracleConnection.makeConnection().createStatement();
             Integer rs = statement.executeUpdate(sql);
             result = String.valueOf(rs);
-        } catch (
-                Exception e) {
+        } catch (Exception e) {
             result = e.getMessage();
+            System.out.println(e.getMessage());
 
         }
         return result;

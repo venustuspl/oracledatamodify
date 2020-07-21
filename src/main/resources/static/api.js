@@ -119,7 +119,7 @@ var updatequerylink = "/updateuserqueryresult?tablename=" + tablename + "&column
 
 ur.innerHTML = '';
 fetch(updatequerylink)
-      .then(response => response.json())
+      .then(response => response.text())
       .then(data => ur.innerHTML = data);
 
 }
