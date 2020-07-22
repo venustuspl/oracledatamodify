@@ -1,6 +1,5 @@
 package pl.venustus.OracleDataModify.Service;
 
-import com.sun.istack.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
@@ -15,7 +14,7 @@ import java.util.List;
 @Repository
 public class OracleServices {
 
-    @NotNull
+
     @Value("${spring.datasource.username}")
     private String username;
 
