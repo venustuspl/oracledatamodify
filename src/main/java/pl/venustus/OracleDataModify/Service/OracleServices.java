@@ -55,7 +55,7 @@ public class OracleServices {
     }
 
     //functions for my work
-    public String executeSetStatusByVariable(String surname, String data0, String data1) throws SQLException {
+    public String executeSetStatusByVariable(String surname, String data0, String data1, Boolean iscorrection) throws SQLException {
 
         System.out.println(surname);
         String sql = "UPDATE PRACOWNICY SET PLACA_DOD = 1 WHERE NAZWISKO LIKE '%" + surname + "%' ";
@@ -64,6 +64,9 @@ public class OracleServices {
         }
         if (data1.length() > 0) {
             sql = sql + "AND ZATRUDNIONY <= TO_DATE('" + data1 + "', 'yyyy/mm/dd') ";
+        }
+        if (!iscorrection) {
+            sql = sql + "AND NAZWISKO LIKE '%%' "; //DO USTALENIA - TYLKO DLA ORÓW BAZOWYCH
         }
         System.out.println(sql);
         String result = "";

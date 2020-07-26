@@ -11,6 +11,8 @@ const aut = document.getElementById('allusertables');
 const acot = document.getElementById('allcolumsoftable');
 const uqr = document.getElementById('userqueryresult');
 const ur = document.getElementById('updatedrows');
+const ic = document.getElementById('iscorrection');
+
 function getnotinvoicedor(){
 
 niol.innerHTML = '';
@@ -18,6 +20,7 @@ niol.innerHTML = '';
     var ppe = document.getElementById("ppe").value;
     var data0 = document.getElementById("data0").value;
     var data1 = document.getElementById("data1").value;
+    var iscorrectionchecked = ic.value;
     var link = "/getnotinvoicedor?name=" + ppe  + "&data0=" + data0 + "&data1=" + data1;
 
 fetch(link)
@@ -40,7 +43,12 @@ function markorinvoiced(){
     var data0 = document.getElementById("data0").value;
     var data1 = document.getElementById("data1").value;
     var link = "/marknotinvoicedor?name=" + ppe  + "&data0=" + data0 + "&data1=" + data1;
-
+    if (ic.checked){
+    console.log("marked");
+        link = link + "&iscorrection=true"
+    } else {
+        link = link + "&iscorrection=false"
+    }
 fetch(link)
   .then(response => response.json())
   .then(data => document.getElementById('markedorcount').innerHTML = data);

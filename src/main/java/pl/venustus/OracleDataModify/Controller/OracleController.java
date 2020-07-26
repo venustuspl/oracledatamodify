@@ -23,8 +23,8 @@ public class OracleController {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/marknotinvoicedor")
-    public String markNotInvoicedOr(@RequestParam("name") String name, @RequestParam("data0") String data0, @RequestParam("data1") String data1) throws IOException, SQLException {
-        return oracleServices.executeSetStatusByVariable(name, data0, data1);
+    public String markNotInvoicedOr(@RequestParam("name") String name, @RequestParam("data0") String data0, @RequestParam("data1") String data1, @RequestParam("iscorrection") Boolean iscorrection) throws IOException, SQLException {
+        return oracleServices.executeSetStatusByVariable(name, data0, data1, iscorrection);
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/getallusertables")
