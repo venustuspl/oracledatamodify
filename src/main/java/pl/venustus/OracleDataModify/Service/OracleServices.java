@@ -24,12 +24,12 @@ public class OracleServices {
     public List<String> executeSelectStatusByVariable(String surname, String data0, String data1) throws SQLException {
 
         System.out.println(surname);
-        String sql = "SELECT * FROM PRACOWNICY WHERE NAZWISKO LIKE '%" + surname + "%' ";
+        String sql = "SElECT FROM I_BILLING_MEASURE_REGISTER WHERE I_BMR_PPE LIKE '%" + surname + "%' ";
         if (data0.length() > 0) {
-            sql = sql + "AND ZATRUDNIONY >= TO_DATE('" + data0 + "', 'yyyy/mm/dd') ";
+            sql = sql + "AND I_BMR_DTFROM >= TO_DATE('" + data0 + "', 'yyyy/mm/dd') ";
         }
         if (data1.length() > 0) {
-            sql = sql + "AND ZATRUDNIONY <= TO_DATE('" + data1 + "', 'yyyy/mm/dd') ";
+            sql = sql + "AND I_BMR_DTTO <= TO_DATE('" + data1 + "', 'yyyy/mm/dd') ";
         }
         System.out.println(sql);
 
@@ -58,16 +58,19 @@ public class OracleServices {
     public String executeSetStatusByVariable(String surname, String data0, String data1, Boolean iscorrection) throws SQLException {
 
         System.out.println(surname);
-        String sql = "UPDATE PRACOWNICY SET PLACA_DOD = 1 WHERE NAZWISKO LIKE '%" + surname + "%' ";
+        String sql = "UPDATE I_BILLING_MEASURE_REGISTER SET I_BMR_BILLINGREADFLAG = 1, I_BMR_STATUS_DESC = 'OR zafakturowany' WHERE I_BMR_PPE LIKE '%" + surname + "%' ";
         if (data0.length() > 0) {
-            sql = sql + "AND ZATRUDNIONY >= TO_DATE('" + data0 + "', 'yyyy/mm/dd') ";
+            sql = sql + "AND I_BMR_DTFROM >= TO_DATE('" + data0 + "', 'yyyy/mm/dd') ";
         }
         if (data1.length() > 0) {
-            sql = sql + "AND ZATRUDNIONY <= TO_DATE('" + data1 + "', 'yyyy/mm/dd') ";
+            sql = sql + "AND I_BMR_DTTO <= TO_DATE('" + data1 + "', 'yyyy/mm/dd') ";
         }
-        if (!iscorrection) {
-            sql = sql + "AND NAZWISKO LIKE '%%' "; //DO USTALENIA - TYLKO DLA ORÓW BAZOWYCH
+        if (iscorrection) {
+            sql = sql + "AND I_BMR_CORRECTION = 1 ";
+        } else {
+            sql = sql + "AND I_BMR_CORRECTION = 0 ";
         }
+
         System.out.println(sql);
         String result = "";
         try {
