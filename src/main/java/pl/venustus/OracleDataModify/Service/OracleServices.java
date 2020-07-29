@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 import pl.venustus.OracleDataModify.Config.OracleConnection;
 
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -88,7 +89,7 @@ public class OracleServices {
         return result;
     }
 
-    public List<String> selectAllUserTables() throws SQLException {
+    public List<String> selectAllUserTables() throws SQLException, IOException {
 
         String sql = "SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%" + username.toUpperCase() + "%'";
         System.out.println(sql);
