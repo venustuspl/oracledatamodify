@@ -21,6 +21,9 @@ public class OracleServices {
     @Autowired
     OracleConnection oracleConnection;
 
+    @Autowired
+    FileLogger fileLogger;
+
     public List<String> executeSelectStatusByVariable(String surname, String data0, String data1) throws SQLException {
 
         System.out.println(surname);
@@ -89,6 +92,7 @@ public class OracleServices {
 
         String sql = "SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%" + username.toUpperCase() + "%'";
         System.out.println(sql);
+        fileLogger.addToLogFile(sql);
         String result = "";
         Integer rowCount = 0;
         List<String> resultList = new ArrayList<>();
