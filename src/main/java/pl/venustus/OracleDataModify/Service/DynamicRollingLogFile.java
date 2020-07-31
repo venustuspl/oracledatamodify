@@ -4,10 +4,12 @@ import org.apache.log4j.DailyRollingFileAppender;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PatternLayout;
+import org.springframework.stereotype.Service;
 
+@Service
 public class DynamicRollingLogFile {
 
-    public static void main(String[] args) {
+    public void makeLogger(String logText) {
         // Creates Pattern Layout
         PatternLayout patternLayoutObj = new PatternLayout();
         String conversionPattern = "[%p] %d %c %M - %m%n";
@@ -26,9 +28,11 @@ public class DynamicRollingLogFile {
         rootLoggerObj.addAppender(rollingAppenderObj);
 
         // Create a Customer Logger & Logs Messages
-        Logger loggerObj = Logger.getLogger(DynamicRollingLogFile.class);
-        loggerObj.debug("This is a debug log message");
-        loggerObj.info("This is an information log message");
-        loggerObj.warn("This is a warning log message");
+        Logger loggerObj = Logger.getLogger(OracleServices.class);
+//        loggerObj.debug("This is a debug log message");
+//        loggerObj.info("This is an information log message");
+//        loggerObj.warn("This is a warning log message");
+//
+        loggerObj.info(logText);
     }
 }
