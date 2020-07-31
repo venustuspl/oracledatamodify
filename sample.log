@@ -8,3 +8,5 @@
 [INFO] 2020-07-31 22:18:46,917 pl.venustus.OracleDataModify.Service.OracleServices main - This is an information log message
 [WARN] 2020-07-31 22:18:46,917 pl.venustus.OracleDataModify.Service.OracleServices main - This is a warning log message
 [INFO] 2020-07-31 22:29:45,648 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%TOMEK%'
+[INFO] 2020-07-31 22:36:03,745 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%TOMEK%'
+[INFO] 2020-07-31 22:36:03,745 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%TOMEK%'
