@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class DynamicRollingLogFile {
 
-    public void makeLogger(String logText) {
+    public void makeLogger(String logText, String logType) {
         // Creates Pattern Layout
         PatternLayout patternLayoutObj = new PatternLayout();
         String conversionPattern = "[%p] %d %c %M - %m%n";
@@ -17,7 +17,7 @@ public class DynamicRollingLogFile {
 
         // Create Daily Rolling Log File Appender
         DailyRollingFileAppender rollingAppenderObj = new DailyRollingFileAppender();
-        rollingAppenderObj.setFile("sample.log");
+        rollingAppenderObj.setFile("OracleApp.log");
         rollingAppenderObj.setDatePattern("'.'yyyy-MM-dd");
         rollingAppenderObj.setLayout(patternLayoutObj);
         rollingAppenderObj.activateOptions();
@@ -33,6 +33,13 @@ public class DynamicRollingLogFile {
 //        loggerObj.info("This is an information log message");
 //        loggerObj.warn("This is a warning log message");
 //
-        loggerObj.info(logText);
+        switch (logType) {
+            case "info":
+                loggerObj.info(logText);
+            case "warn":
+                loggerObj.warn(logText);
+            case "error":
+                loggerObj.error(logText);
+        }
     }
 }
