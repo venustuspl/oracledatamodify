@@ -1,37 +1,36 @@
-[INFO] 2020-08-01 23:05:50,103 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%TOMEK%'
-[WARN] 2020-08-01 23:05:50,108 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%TOMEK%'
-[ERROR] 2020-08-01 23:05:50,109 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%TOMEK%'
-[ERROR] 2020-08-01 23:05:54,119 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - B³¹d we-wy: The Network Adapter could not establish the connection
-[ERROR] 2020-08-01 23:05:54,119 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - B³¹d we-wy: The Network Adapter could not establish the connection
-[INFO] 2020-08-01 23:06:28,774 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT COLUMN_NAME FROM ALL_TAB_COLS WHERE TABLE_NAME LIKE '%%' AND OWNER LIKE '%TOMEK%'
-[INFO] 2020-08-01 23:06:28,774 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT COLUMN_NAME FROM ALL_TAB_COLS WHERE TABLE_NAME LIKE '%%' AND OWNER LIKE '%TOMEK%'
-[INFO] 2020-08-01 23:06:28,774 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT COLUMN_NAME FROM ALL_TAB_COLS WHERE TABLE_NAME LIKE '%%' AND OWNER LIKE '%TOMEK%'
-[WARN] 2020-08-01 23:06:28,777 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT COLUMN_NAME FROM ALL_TAB_COLS WHERE TABLE_NAME LIKE '%%' AND OWNER LIKE '%TOMEK%'
-[WARN] 2020-08-01 23:06:28,777 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT COLUMN_NAME FROM ALL_TAB_COLS WHERE TABLE_NAME LIKE '%%' AND OWNER LIKE '%TOMEK%'
-[WARN] 2020-08-01 23:06:28,777 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT COLUMN_NAME FROM ALL_TAB_COLS WHERE TABLE_NAME LIKE '%%' AND OWNER LIKE '%TOMEK%'
-[ERROR] 2020-08-01 23:06:28,777 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT COLUMN_NAME FROM ALL_TAB_COLS WHERE TABLE_NAME LIKE '%%' AND OWNER LIKE '%TOMEK%'
-[ERROR] 2020-08-01 23:06:28,777 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT COLUMN_NAME FROM ALL_TAB_COLS WHERE TABLE_NAME LIKE '%%' AND OWNER LIKE '%TOMEK%'
-[ERROR] 2020-08-01 23:06:28,777 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT COLUMN_NAME FROM ALL_TAB_COLS WHERE TABLE_NAME LIKE '%%' AND OWNER LIKE '%TOMEK%'
-[INFO] 2020-08-01 23:06:28,932 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT COLUMN_NAME FROM ALL_TAB_COLS WHERE TABLE_NAME LIKE '%%' AND OWNER LIKE '%TOMEK%'
-[INFO] 2020-08-01 23:06:28,932 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT COLUMN_NAME FROM ALL_TAB_COLS WHERE TABLE_NAME LIKE '%%' AND OWNER LIKE '%TOMEK%'
-[INFO] 2020-08-01 23:06:28,932 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT COLUMN_NAME FROM ALL_TAB_COLS WHERE TABLE_NAME LIKE '%%' AND OWNER LIKE '%TOMEK%'
-[INFO] 2020-08-01 23:06:28,932 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT COLUMN_NAME FROM ALL_TAB_COLS WHERE TABLE_NAME LIKE '%%' AND OWNER LIKE '%TOMEK%'
-[WARN] 2020-08-01 23:06:28,934 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT COLUMN_NAME FROM ALL_TAB_COLS WHERE TABLE_NAME LIKE '%%' AND OWNER LIKE '%TOMEK%'
-[WARN] 2020-08-01 23:06:28,934 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT COLUMN_NAME FROM ALL_TAB_COLS WHERE TABLE_NAME LIKE '%%' AND OWNER LIKE '%TOMEK%'
-[WARN] 2020-08-01 23:06:28,934 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT COLUMN_NAME FROM ALL_TAB_COLS WHERE TABLE_NAME LIKE '%%' AND OWNER LIKE '%TOMEK%'
-[WARN] 2020-08-01 23:06:28,934 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT COLUMN_NAME FROM ALL_TAB_COLS WHERE TABLE_NAME LIKE '%%' AND OWNER LIKE '%TOMEK%'
-[ERROR] 2020-08-01 23:06:28,934 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT COLUMN_NAME FROM ALL_TAB_COLS WHERE TABLE_NAME LIKE '%%' AND OWNER LIKE '%TOMEK%'
-[ERROR] 2020-08-01 23:06:28,934 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT COLUMN_NAME FROM ALL_TAB_COLS WHERE TABLE_NAME LIKE '%%' AND OWNER LIKE '%TOMEK%'
-[ERROR] 2020-08-01 23:06:28,934 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT COLUMN_NAME FROM ALL_TAB_COLS WHERE TABLE_NAME LIKE '%%' AND OWNER LIKE '%TOMEK%'
-[ERROR] 2020-08-01 23:06:28,934 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT COLUMN_NAME FROM ALL_TAB_COLS WHERE TABLE_NAME LIKE '%%' AND OWNER LIKE '%TOMEK%'
-[ERROR] 2020-08-01 23:06:32,784 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - B³¹d we-wy: The Network Adapter could not establish the connection
-[ERROR] 2020-08-01 23:06:32,784 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - B³¹d we-wy: The Network Adapter could not establish the connection
-[ERROR] 2020-08-01 23:06:32,784 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - B³¹d we-wy: The Network Adapter could not establish the connection
-[ERROR] 2020-08-01 23:06:32,784 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - B³¹d we-wy: The Network Adapter could not establish the connection
-[ERROR] 2020-08-01 23:06:32,784 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - B³¹d we-wy: The Network Adapter could not establish the connection
-[ERROR] 2020-08-01 23:06:32,946 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - B³¹d we-wy: The Network Adapter could not establish the connection
-[ERROR] 2020-08-01 23:06:32,946 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - B³¹d we-wy: The Network Adapter could not establish the connection
-[ERROR] 2020-08-01 23:06:32,946 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - B³¹d we-wy: The Network Adapter could not establish the connection
-[ERROR] 2020-08-01 23:06:32,946 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - B³¹d we-wy: The Network Adapter could not establish the connection
-[ERROR] 2020-08-01 23:06:32,946 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - B³¹d we-wy: The Network Adapter could not establish the connection
-[ERROR] 2020-08-01 23:06:32,946 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - B³¹d we-wy: The Network Adapter could not establish the connection
+[INFO] 2020-08-02 09:42:14,091 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%TOMEK%'
+[ERROR] 2020-08-02 09:42:18,104 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - B³¹d we-wy: The Network Adapter could not establish the connection
+[ERROR] 2020-08-02 09:42:18,104 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - B³¹d we-wy: The Network Adapter could not establish the connection
+[INFO] 2020-08-02 09:42:31,447 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%TOMEK%'
+[INFO] 2020-08-02 09:42:31,447 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%TOMEK%'
+[INFO] 2020-08-02 09:42:31,447 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%TOMEK%'
+[ERROR] 2020-08-02 09:42:35,460 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - B³¹d we-wy: The Network Adapter could not establish the connection
+[ERROR] 2020-08-02 09:42:35,460 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - B³¹d we-wy: The Network Adapter could not establish the connection
+[ERROR] 2020-08-02 09:42:35,460 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - B³¹d we-wy: The Network Adapter could not establish the connection
+[ERROR] 2020-08-02 09:42:35,460 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - B³¹d we-wy: The Network Adapter could not establish the connection
+[INFO] 2020-08-02 09:42:44,874 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%TOMEK%'
+[INFO] 2020-08-02 09:42:44,874 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%TOMEK%'
+[INFO] 2020-08-02 09:42:44,874 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%TOMEK%'
+[INFO] 2020-08-02 09:42:44,874 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%TOMEK%'
+[INFO] 2020-08-02 09:42:44,874 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%TOMEK%'
+[ERROR] 2020-08-02 09:42:48,897 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - B³¹d we-wy: The Network Adapter could not establish the connection
+[ERROR] 2020-08-02 09:42:48,897 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - B³¹d we-wy: The Network Adapter could not establish the connection
+[ERROR] 2020-08-02 09:42:48,897 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - B³¹d we-wy: The Network Adapter could not establish the connection
+[ERROR] 2020-08-02 09:42:48,897 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - B³¹d we-wy: The Network Adapter could not establish the connection
+[ERROR] 2020-08-02 09:42:48,897 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - B³¹d we-wy: The Network Adapter could not establish the connection
+[ERROR] 2020-08-02 09:42:48,897 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - B³¹d we-wy: The Network Adapter could not establish the connection
+[INFO] 2020-08-02 09:42:54,545 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%TOMEK%'
+[INFO] 2020-08-02 09:42:54,545 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%TOMEK%'
+[INFO] 2020-08-02 09:42:54,545 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%TOMEK%'
+[INFO] 2020-08-02 09:42:54,545 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%TOMEK%'
+[INFO] 2020-08-02 09:42:54,545 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%TOMEK%'
+[INFO] 2020-08-02 09:42:54,545 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%TOMEK%'
+[INFO] 2020-08-02 09:42:54,545 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%TOMEK%'
+[ERROR] 2020-08-02 09:42:58,557 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - B³¹d we-wy: The Network Adapter could not establish the connection
+[ERROR] 2020-08-02 09:42:58,557 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - B³¹d we-wy: The Network Adapter could not establish the connection
+[ERROR] 2020-08-02 09:42:58,557 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - B³¹d we-wy: The Network Adapter could not establish the connection
+[ERROR] 2020-08-02 09:42:58,557 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - B³¹d we-wy: The Network Adapter could not establish the connection
+[ERROR] 2020-08-02 09:42:58,557 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - B³¹d we-wy: The Network Adapter could not establish the connection
+[ERROR] 2020-08-02 09:42:58,557 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - B³¹d we-wy: The Network Adapter could not establish the connection
+[ERROR] 2020-08-02 09:42:58,557 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - B³¹d we-wy: The Network Adapter could not establish the connection
+[ERROR] 2020-08-02 09:42:58,557 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - B³¹d we-wy: The Network Adapter could not establish the connection

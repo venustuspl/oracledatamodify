@@ -42,13 +42,21 @@ dependencies {
 	}
 
 }
-//
+
 //springBoot {
 //	mainClassName = 'pl.venustus.OracleDataModify.OracleDataModifyApplication'
 //}
 //bootJar {
 //	mainClassName = 'pl.venustus.OracleDataModify.OracleDataModifyApplication'
 //}
+
+jar {
+	manifest {
+		attributes 'Implementation-Title': 'Gradle Quickstart',
+
+				'Main-Class': 'pl.venustus.OracleDataModify.OracleDataModifyApplication'
+	}
+}
 //bootJar {
 //	manifest {
 //		attributes 'Start-Class': 'pl.venustus.OracleDataModify.OracleDataModifyApplication'

@@ -22,7 +22,7 @@ public class DynamicRollingLogFile {
         rollingAppenderObj.setLayout(patternLayoutObj);
         rollingAppenderObj.activateOptions();
 
-        // Configure the Root Logger
+        //Configure the Root Logger
         Logger rootLoggerObj = Logger.getRootLogger();
         rootLoggerObj.setLevel(Level.DEBUG);
         rootLoggerObj.addAppender(rollingAppenderObj);
@@ -32,14 +32,17 @@ public class DynamicRollingLogFile {
 //        loggerObj.debug("This is a debug log message");
 //        loggerObj.info("This is an information log message");
 //        loggerObj.warn("This is a warning log message");
-//
+
         switch (logType) {
             case "info":
                 loggerObj.info(logText);
+                break;
             case "warn":
                 loggerObj.warn(logText);
+                break;
             case "error":
                 loggerObj.error(logText);
+                break;
         }
     }
 }
