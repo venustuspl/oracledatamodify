@@ -1,7 +1,6 @@
 package pl.venustus.OracleDataModify.Service;
 
 import org.apache.log4j.DailyRollingFileAppender;
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PatternLayout;
 import org.springframework.stereotype.Service;
@@ -17,14 +16,14 @@ public class DynamicRollingLogFile {
 
         // Create Daily Rolling Log File Appender
         DailyRollingFileAppender rollingAppenderObj = new DailyRollingFileAppender();
-        rollingAppenderObj.setFile("OracleApp.log");
-        rollingAppenderObj.setDatePattern("'.'yyyy-MM-dd");
+        rollingAppenderObj.setFile("OracleApp_");
+        rollingAppenderObj.setDatePattern("yyyy-MM-dd'.log'");
         rollingAppenderObj.setLayout(patternLayoutObj);
         rollingAppenderObj.activateOptions();
 
         //Configure the Root Logger
         Logger rootLoggerObj = Logger.getRootLogger();
-        rootLoggerObj.setLevel(Level.DEBUG);
+        //  rootLoggerObj.setLevel(Level.DEBUG);
         rootLoggerObj.addAppender(rollingAppenderObj);
 
         // Create a Customer Logger & Logs Messages

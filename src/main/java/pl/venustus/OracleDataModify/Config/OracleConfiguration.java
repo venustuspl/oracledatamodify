@@ -3,7 +3,6 @@ package pl.venustus.OracleDataModify.Config;
 import oracle.jdbc.pool.OracleDataSource;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
@@ -37,7 +36,7 @@ public class OracleConfiguration {
         this.url = url;
     }
 
-    @Bean
+
     DataSource dataSource() throws SQLException {
         OracleDataSource dataSource = new OracleDataSource();
         dataSource.setUser(username);
