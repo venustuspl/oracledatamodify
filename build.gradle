@@ -43,12 +43,12 @@ dependencies {
 
 }
 
-//springBoot {
-//	mainClassName = 'pl.venustus.OracleDataModify.OracleDataModifyApplication'
-//}
-//bootJar {
-//	mainClassName = 'pl.venustus.OracleDataModify.OracleDataModifyApplication'
-//}
+springBoot {
+	mainClassName = 'pl.venustus.OracleDataModify.OracleDataModifyApplication'
+}
+bootJar {
+	mainClassName = 'pl.venustus.OracleDataModify.OracleDataModifyApplication'
+}
 
 jar {
 	manifest {
@@ -57,11 +57,11 @@ jar {
 				'Main-Class': 'pl.venustus.OracleDataModify.OracleDataModifyApplication'
 	}
 }
-//bootJar {
-//	manifest {
-//		attributes 'Start-Class': 'pl.venustus.OracleDataModify.OracleDataModifyApplication'
-//	}
-//}
+bootJar {
+	manifest {
+		attributes 'Start-Class': 'pl.venustus.OracleDataModify.OracleDataModifyApplication'
+	}
+}
 
 test {
 	useJUnitPlatform()
