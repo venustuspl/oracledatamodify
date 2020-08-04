@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class DynamicRollingLogFile {
 
-    public void makeLogger(String logText, String logType) {
+    public Logger makeLogger() {
         // Creates Pattern Layout
         PatternLayout patternLayoutObj = new PatternLayout();
         String conversionPattern = "[%p] %d %c %M - %m%n";
@@ -32,16 +32,7 @@ public class DynamicRollingLogFile {
 //        loggerObj.info("This is an information log message");
 //        loggerObj.warn("This is a warning log message");
 
-        switch (logType) {
-            case "info":
-                loggerObj.info(logText);
-                break;
-            case "warn":
-                loggerObj.warn(logText);
-                break;
-            case "error":
-                loggerObj.error(logText);
-                break;
-        }
+        return loggerObj;
+
     }
 }

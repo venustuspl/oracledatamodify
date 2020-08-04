@@ -20,13 +20,13 @@ public class OracleServices {
     private String username;
 
     @Autowired
-    OracleConnection oracleConnection;
+    private OracleConnection oracleConnection;
 
     @Autowired
-    FileLogger fileLogger;
+    private FileLogger fileLogger;
 
     @Autowired
-    DynamicRollingLogFile dynamicRollingLogFile;
+    private LogSwitcher logSwitcher;
 
     public List<String> executeSelectStatusByVariable(String surname, String data0, String data1) throws SQLException {
 
@@ -38,7 +38,7 @@ public class OracleServices {
         if (data1.length() > 0) {
             sql = sql + "AND I_BMR_DTTO <= TO_DATE('" + data1 + "', 'yyyy/mm/dd') ";
         }
-        dynamicRollingLogFile.makeLogger(sql, "info");
+        logSwitcher.writeLog(sql, "info");
         System.out.println(sql);
 
         String result = "";
@@ -56,7 +56,7 @@ public class OracleServices {
             }
         } catch (Exception e) {
             result = e.getMessage();
-            dynamicRollingLogFile.makeLogger(result, "error");
+            logSwitcher.writeLog(result, "error");
             System.out.println(result);
         }
 
@@ -79,7 +79,7 @@ public class OracleServices {
         } else {
             sql = sql + "AND I_BMR_CORRECTION = 0 ";
         }
-        dynamicRollingLogFile.makeLogger(sql, "info");
+        logSwitcher.writeLog(sql, "info");
         System.out.println(sql);
         String result = "";
         try {
@@ -89,7 +89,7 @@ public class OracleServices {
         } catch (
                 Exception e) {
             result = e.getMessage();
-            dynamicRollingLogFile.makeLogger(result, "error");
+            logSwitcher.writeLog(result, "error");
 
         }
         return result;
@@ -99,7 +99,7 @@ public class OracleServices {
 
         String sql = "SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%" + username.toUpperCase() + "%'";
         System.out.println(sql);
-        dynamicRollingLogFile.makeLogger(sql, "info");
+        logSwitcher.writeLog(sql, "info");
         String result = "";
         Integer rowCount = 0;
         List<String> resultList = new ArrayList<>();
@@ -115,7 +115,7 @@ public class OracleServices {
             }
         } catch (Exception e) {
             result = e.getMessage();
-            dynamicRollingLogFile.makeLogger(result, "error");
+            logSwitcher.writeLog(result, "error");
             System.out.println(result);
         }
 
@@ -127,7 +127,7 @@ public class OracleServices {
         String sql = "SELECT COLUMN_NAME FROM ALL_TAB_COLS WHERE TABLE_NAME LIKE '%" + tableName.toUpperCase() +
                 "%' AND OWNER LIKE '%" + username.toUpperCase() + "%'";
         System.out.println(sql);
-        dynamicRollingLogFile.makeLogger(sql, "info");
+        logSwitcher.writeLog(sql, "info");
         String result = "";
         Integer rowCount = 0;
         List<String> resultList = new ArrayList<>();
@@ -143,7 +143,7 @@ public class OracleServices {
             }
         } catch (Exception e) {
             result = e.getMessage();
-            dynamicRollingLogFile.makeLogger(result, "error");
+            logSwitcher.writeLog(result, "error");
             System.out.println(result);
         }
 
@@ -153,7 +153,7 @@ public class OracleServices {
     public List<String> getDataFromUserSelect(String tableName, String columnName, String columnValue) throws SQLException {
 
         String sql = "SELECT * FROM " + tableName + " WHERE " + columnName + " LIKE '%" + columnValue + "%'";
-        dynamicRollingLogFile.makeLogger(sql, "info");
+        logSwitcher.writeLog(sql, "info");
         System.out.println(sql);
         Integer rowCount = 0;
         List<String> resultList = new ArrayList<>();
@@ -167,7 +167,7 @@ public class OracleServices {
             }
         } catch (Exception e) {
             resultList.add(e.getMessage());
-            dynamicRollingLogFile.makeLogger(e.getMessage(), "error");
+            logSwitcher.writeLog(e.getMessage(), "error");
         }
 
         return resultList;
@@ -179,7 +179,7 @@ public class OracleServices {
 
         String sql = "UPDATE " + tablename + " SET " + column + " = '" + newcolumnvalue + "' WHERE " +
                 column + " LIKE '%" + oldcolumnvalue + "%' ";
-        dynamicRollingLogFile.makeLogger(sql, "info");
+        logSwitcher.writeLog(sql, "info");
         System.out.println(sql);
         String result = "";
         try {
@@ -188,7 +188,7 @@ public class OracleServices {
             result = String.valueOf(rs);
         } catch (Exception e) {
             result = e.getMessage();
-            dynamicRollingLogFile.makeLogger(result, "error");
+            logSwitcher.writeLog(result, "error");
             System.out.println(e.getMessage());
 
         }
