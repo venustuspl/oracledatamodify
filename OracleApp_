@@ -1,0 +1,1 @@
+[INFO] 2020-08-04 19:11:55,382 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%TOMEK%'
