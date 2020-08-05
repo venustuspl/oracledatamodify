@@ -1,12 +1,12 @@
 package pl.venustus.OracleDataModify.Config;
 
-import com.zaxxer.hikari.HikariDataSource;
 import oracle.jdbc.pool.OracleDataSource;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import javax.sql.DataSource;
 import java.sql.SQLException;
 
 
@@ -38,15 +38,12 @@ public class OracleConfiguration {
     }
 
     @Bean
-    HikariDataSource dataSource() throws SQLException {
+    DataSource dataSource() throws SQLException {
         OracleDataSource dataSource = new OracleDataSource();
         dataSource.setUser(username);
         dataSource.setPassword(password);
         dataSource.setURL("jdbc:oracle:thin:@//localhost:1522/orcl1");
 
-        HikariDataSource hikariDs = new HikariDataSource();
-        hikariDs.setDataSource(dataSource);
-        hikariDs.setConnectionInitSql("ALTER SESSION SET CURRENT_SCHEMA = MY_SCHEMA");
-        return hikariDs;
+        return dataSource;
     }
 }
