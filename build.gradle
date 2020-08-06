@@ -1,14 +1,16 @@
 plugins {
 	id 'org.springframework.boot' version '2.3.1.RELEASE'
-
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
 	id 'java'
 }
 
 group = 'pl.venustus'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
+version = '1.6.'
 
+compileJava   {
+	sourceCompatibility = '1.8'
+	targetCompatibility = '1.8'
+}
 configurations {
 	compileOnly {
 		extendsFrom annotationProcessor
