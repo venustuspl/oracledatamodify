@@ -49,7 +49,8 @@ public class OracleServices {
             Statement statement = oracleConnection.makeConnection().createStatement();
             ResultSet rs = statement.executeQuery(sql);
             while (rs.next()) {
-                System.out.println(rs.getString(2));
+                //System.out.println(rs.getString(2));
+                logSwitcher.writeLog(rs.getString(2), "info");
                 result = result + rs.getString(2) + "\n";
                 resultList.add(rs.getString(2) + " | " + rs.getString(3) + " | " + rs.getString(4));
                 rowCount++;
@@ -86,6 +87,7 @@ public class OracleServices {
             Statement statement = oracleConnection.makeConnection().createStatement();
             Integer rs = statement.executeUpdate(sql);
             result = String.valueOf(rs);
+            logSwitcher.writeLog(result, "info");
         } catch (
                 Exception e) {
             result = e.getMessage();
@@ -108,7 +110,8 @@ public class OracleServices {
             Statement statement = oracleConnection.makeConnection().createStatement();
             ResultSet rs = statement.executeQuery(sql);
             while (rs.next()) {
-                System.out.println(rs.getString(2));
+                //System.out.println(rs.getString(2));
+                logSwitcher.writeLog(rs.getString(2), "info");
                 result = result + rs.getString(2) + "\n";
                 resultList.add(rs.getString(2));
                 rowCount++;
@@ -136,7 +139,8 @@ public class OracleServices {
             Statement statement = oracleConnection.makeConnection().createStatement();
             ResultSet rs = statement.executeQuery(sql);
             while (rs.next()) {
-                System.out.println(rs.getString(1));
+                //System.out.println(rs.getString(1));
+                logSwitcher.writeLog(rs.getString(1), "info");
                 result = result + rs.getString(1) + "\n";
                 resultList.add(rs.getString(1));
                 rowCount++;
@@ -162,7 +166,8 @@ public class OracleServices {
             Statement statement = oracleConnection.makeConnection().createStatement();
             ResultSet rs = statement.executeQuery(sql);
             while (rs.next()) {
-                System.out.println(rs.getString(1));
+                //ystem.out.println(rs.getString(1));
+                logSwitcher.writeLog(rs.getString(1), "info");
                 resultList.add(rs.getString(1));
             }
         } catch (Exception e) {
@@ -186,6 +191,7 @@ public class OracleServices {
             Statement statement = oracleConnection.makeConnection().createStatement();
             Integer rs = statement.executeUpdate(sql);
             result = String.valueOf(rs);
+            logSwitcher.writeLog(result, "info");
         } catch (Exception e) {
             result = e.getMessage();
             logSwitcher.writeLog(result, "error");
