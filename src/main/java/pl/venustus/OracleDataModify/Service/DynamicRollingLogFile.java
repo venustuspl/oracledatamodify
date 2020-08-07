@@ -1,7 +1,6 @@
 package pl.venustus.OracleDataModify.Service;
 
 import org.apache.log4j.DailyRollingFileAppender;
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PatternLayout;
 import org.springframework.stereotype.Service;
@@ -25,11 +24,11 @@ public class DynamicRollingLogFile {
 
         // Configure the Root Logger
         Logger rootLoggerObj = Logger.getRootLogger();
-        rootLoggerObj.setLevel(Level.DEBUG);
+        // rootLoggerObj.setLevel(Level.DEBUG);
         rootLoggerObj.addAppender(rollingAppenderObj);
 
         // Create a Customer Logger & Logs Messages
-        Logger loggerObj = Logger.getLogger(DynamicRollingLogFile.class);
+        Logger loggerObj = Logger.getLogger(OracleServices.class);
 
         switch (logType) {
             case "info":
