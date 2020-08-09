@@ -15,7 +15,6 @@ import java.util.List;
 @Repository
 public class OracleServices {
 
-
     @Value("${spring.datasource.username}")
     private String username;
 
@@ -29,7 +28,6 @@ public class OracleServices {
     private DynamicRollingLogFile dynamicRollingLogFile;
 
     public List<String> executeSelectStatusByVariable(String surname, String data0, String data1) throws SQLException {
-
         System.out.println(surname);
         String sql = "SElECT * FROM I_BILLING_MEASURE_REGISTER WHERE I_BMR_PPE LIKE '%" + surname + "%' ";
         if (data0.length() > 0) {
