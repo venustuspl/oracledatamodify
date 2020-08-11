@@ -42,7 +42,7 @@ public class OracleConfiguration {
         OracleDataSource dataSource = new OracleDataSource();
         dataSource.setUser(username);
         dataSource.setPassword(password);
-        dataSource.setURL("jdbc:oracle:thin:@//localhost:1522/orcl1");
+        dataSource.setURL(url);
 
         return dataSource;
     }
