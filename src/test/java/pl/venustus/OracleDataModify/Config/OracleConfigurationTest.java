@@ -7,15 +7,12 @@ import org.mockito.internal.util.reflection.Whitebox;
 import org.mockito.junit.MockitoJUnitRunner;
 
 @RunWith(MockitoJUnitRunner.class)
-class OracleConfigurationTest {
-
+public class OracleConfigurationTest {
 
     OracleConfiguration oracleConfiguration = new OracleConfiguration();
-
     String username = "usernameTest";
     String password = "passwordTest";
     String url = "urlTest";
-
 
     @Test
     void dataSource() throws Exception {

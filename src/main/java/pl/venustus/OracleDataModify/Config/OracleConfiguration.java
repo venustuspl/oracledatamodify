@@ -2,7 +2,6 @@ package pl.venustus.OracleDataModify.Config;
 
 import oracle.jdbc.pool.OracleDataSource;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -11,7 +10,6 @@ import java.sql.SQLException;
 
 
 @Configuration
-@ConfigurationProperties("oracle")
 public class OracleConfiguration {
 
     @Value("${spring.datasource.username}")
