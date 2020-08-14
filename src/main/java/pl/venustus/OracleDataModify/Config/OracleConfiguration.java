@@ -20,7 +20,7 @@ public class OracleConfiguration {
     private String password;
 
 
-    @Value("spring.datasource.url")
+    @Value("${spring.datasource.url}")
     private String url;
 
     public void setUsername(String username) {
