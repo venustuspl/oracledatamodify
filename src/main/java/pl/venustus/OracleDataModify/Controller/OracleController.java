@@ -18,7 +18,7 @@ public class OracleController {
     OracleServices oracleServices;
 
     @RequestMapping(method = RequestMethod.GET, value = "/getnotinvoicedor")
-    public List<String> getPlacaDodForAnyone(@RequestParam("name") String name, @RequestParam("data0") String data0, @RequestParam("data1") String data1) throws IOException, SQLException {
+    public List<String> getNotInvoicedOr(@RequestParam("name") String name, @RequestParam("data0") String data0, @RequestParam("data1") String data1) throws IOException, SQLException {
         return oracleServices.executeSelectStatusByVariable(name, data0, data1);
     }
 
