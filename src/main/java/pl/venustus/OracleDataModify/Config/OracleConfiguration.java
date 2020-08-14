@@ -19,7 +19,6 @@ public class OracleConfiguration {
     @Value("${spring.datasource.password}")
     private String password;
 
-
     @Value("${spring.datasource.url}")
     private String url;
 
