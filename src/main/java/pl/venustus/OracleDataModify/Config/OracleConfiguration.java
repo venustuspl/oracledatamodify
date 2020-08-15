@@ -4,12 +4,14 @@ import oracle.jdbc.pool.OracleDataSource;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
 
 
 @Configuration
+@PropertySource(value = {"classpath:/bin/appclient.properties"})
 public class OracleConfiguration {
 
     @Value("${spring.datasource.username}")
