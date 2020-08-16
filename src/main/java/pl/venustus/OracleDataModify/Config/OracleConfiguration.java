@@ -7,12 +7,17 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 import javax.sql.DataSource;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.sql.SQLException;
+import java.util.Scanner;
 
 
 @Configuration
-@PropertySource(value = {"classpath:/bin/appclient.properties"})
+@PropertySource(value = {"classpath:appclient.properties"})
 public class OracleConfiguration {
+
+    private final Boolean isPropertiesWasImportetFromFile = false;
 
     @Value("${spring.datasource.username}")
     private String username;
@@ -23,6 +28,29 @@ public class OracleConfiguration {
 
     @Value("${spring.datasource.url}")
     private String url;
+
+
+    public void setDataSourceProperties() {
+        try {
+            File myObj = new File("settings.txt");
+            Scanner myReader = new Scanner(myObj);
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
+                System.out.println(data);
+            }
+            myReader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+
+//        if (!isPropertiesWasImportetFromFile) {
+//
+//        } else {
+//
+//        }
+
 
     public void setUsername(String username) {
         this.username = username;
