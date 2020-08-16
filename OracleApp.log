@@ -150,3 +150,28 @@
 [WARN] 2020-08-16 19:17:48,289 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%TOMEK%'
 [ERROR] 2020-08-16 19:17:52,310 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - B³¹d we-wy: The Network Adapter could not establish the connection
 [ERROR] 2020-08-16 19:17:52,310 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - B³¹d we-wy: The Network Adapter could not establish the connection
+[WARN] 2020-08-16 20:20:14,406 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%TOMEK%'
+[ERROR] 2020-08-16 20:20:26,669 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - Listener refused the connection with the following error:
+ORA-12514, TNS:listener does not currently know of service requested in connect descriptor
+ 
+[ERROR] 2020-08-16 20:20:26,669 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - Listener refused the connection with the following error:
+ORA-12514, TNS:listener does not currently know of service requested in connect descriptor
+ 
+[WARN] 2020-08-16 20:22:42,040 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%TOMEK1%'
+[ERROR] 2020-08-16 20:22:43,614 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - ORA-01017: invalid username/password; logon denied
+
+[ERROR] 2020-08-16 20:22:43,614 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - ORA-01017: invalid username/password; logon denied
+
+[WARN] 2020-08-16 20:25:29,199 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%TOMEK1%'
+[ERROR] 2020-08-16 20:25:29,206 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - Podano niepoprawny adres Oracle URL: OracleDataSource.makeURL
+[ERROR] 2020-08-16 20:25:29,206 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - Podano niepoprawny adres Oracle URL: OracleDataSource.makeURL
+[WARN] 2020-08-16 20:25:36,499 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%TOMEK1%'
+[WARN] 2020-08-16 20:25:36,499 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%TOMEK1%'
+[WARN] 2020-08-16 20:25:36,499 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%TOMEK1%'
+[ERROR] 2020-08-16 20:25:36,503 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - Podano niepoprawny adres Oracle URL: OracleDataSource.makeURL
+[ERROR] 2020-08-16 20:25:36,503 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - Podano niepoprawny adres Oracle URL: OracleDataSource.makeURL
+[ERROR] 2020-08-16 20:25:36,503 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - Podano niepoprawny adres Oracle URL: OracleDataSource.makeURL
+[ERROR] 2020-08-16 20:25:36,503 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - Podano niepoprawny adres Oracle URL: OracleDataSource.makeURL
+[WARN] 2020-08-16 20:26:59,145 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%TOMEK1%'
+[ERROR] 2020-08-16 20:26:59,152 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - Podano niepoprawny adres Oracle URL: OracleDataSource.makeURL
+[ERROR] 2020-08-16 20:26:59,152 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - Podano niepoprawny adres Oracle URL: OracleDataSource.makeURL

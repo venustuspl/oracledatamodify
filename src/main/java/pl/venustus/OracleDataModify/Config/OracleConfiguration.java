@@ -1,35 +1,29 @@
 package pl.venustus.OracleDataModify.Config;
 
 import oracle.jdbc.pool.OracleDataSource;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
 
 import javax.sql.DataSource;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
 import java.util.Scanner;
 
 
 @Configuration
-@PropertySource(value = {"classpath:appclient.properties"})
 public class OracleConfiguration {
 
     private final Boolean isPropertiesWasImportetFromFile = false;
 
-    @Value("${spring.datasource.username}")
+    //@Value("${spring.datasource.username}")
     private String username;
 
 
-    @Value("${spring.datasource.password}")
+    //@Value("${spring.datasource.password}")
     private String password;
 
-    @Value("${spring.datasource.url}")
+    //@Value("${spring.datasource.url}")
     private String url;
 
 
@@ -38,19 +32,19 @@ public class OracleConfiguration {
             System.out.println("File searching...");
             File myObj = new File("bin/settings.txt");
             Scanner myReader = new Scanner(myObj);
-            while (myReader.hasNextLine()) {
-                String data = myReader.nextLine();
-                System.out.println(data);
-            }
-            FileWriter fileWriter = new FileWriter(myObj);
-            fileWriter.append(String.valueOf(LocalDateTime.now()));
-            fileWriter.close();
+
+            setUrl(myReader.nextLine());
+            setUsername(myReader.nextLine());
+            setPassword(myReader.nextLine());
+            System.out.println(url + username + password);
+
+            //FileWriter fileWriter = new FileWriter(myObj);
+            //fileWriter.append(String.valueOf(LocalDateTime.now()));
+            //fileWriter.close();
             myReader.close();
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
 
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 
@@ -75,6 +69,7 @@ public class OracleConfiguration {
 
     @Bean
     DataSource dataSource() throws SQLException {
+        System.out.println("Data source: " + url + "|" + username + "|" + password);
         OracleDataSource dataSource = new OracleDataSource();
         dataSource.setUser(username);
         dataSource.setPassword(password);
