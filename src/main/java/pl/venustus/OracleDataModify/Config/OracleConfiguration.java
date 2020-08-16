@@ -9,7 +9,10 @@ import org.springframework.context.annotation.PropertySource;
 import javax.sql.DataSource;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
 import java.util.Scanner;
 
 
@@ -32,15 +35,21 @@ public class OracleConfiguration {
 
     public void setDataSourceProperties() {
         try {
-            File myObj = new File("settings.txt");
+            System.out.println("File searching...");
+            File myObj = new File("bin/settings.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
                 System.out.println(data);
             }
+            FileWriter fileWriter = new FileWriter(myObj);
+            fileWriter.append(String.valueOf(LocalDateTime.now()));
+            fileWriter.close();
             myReader.close();
         } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
+            System.out.println(e.getMessage());
+
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
