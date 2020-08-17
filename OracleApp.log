@@ -175,3 +175,51 @@ ORA-12514, TNS:listener does not currently know of service requested in connect 
 [WARN] 2020-08-16 20:26:59,145 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%TOMEK1%'
 [ERROR] 2020-08-16 20:26:59,152 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - Podano niepoprawny adres Oracle URL: OracleDataSource.makeURL
 [ERROR] 2020-08-16 20:26:59,152 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - Podano niepoprawny adres Oracle URL: OracleDataSource.makeURL
+[WARN] 2020-08-16 20:30:29,159 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%TOMEK1%'
+[WARN] 2020-08-16 20:30:34,038 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%TOMEK1%'
+[WARN] 2020-08-16 20:30:34,038 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%TOMEK1%'
+[WARN] 2020-08-16 20:32:41,386 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%TOMEK%'
+[WARN] 2020-08-16 20:32:41,551 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - NAZWISKA
+[WARN] 2020-08-16 20:32:41,551 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - NAZWISKA
+[WARN] 2020-08-16 20:32:41,552 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - PASSWORDS
+[WARN] 2020-08-16 20:32:41,552 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - PASSWORDS
+[WARN] 2020-08-16 20:32:41,552 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - PASSWORDS
+[WARN] 2020-08-16 20:32:41,554 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - NLS_COPY
+[WARN] 2020-08-16 20:32:41,554 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - NLS_COPY
+[WARN] 2020-08-16 20:32:41,554 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - NLS_COPY
+[WARN] 2020-08-16 20:32:41,554 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - NLS_COPY
+[WARN] 2020-08-16 20:32:41,555 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - ZESPOLY
+[WARN] 2020-08-16 20:32:41,555 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - ZESPOLY
+[WARN] 2020-08-16 20:32:41,555 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - ZESPOLY
+[WARN] 2020-08-16 20:32:41,555 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - ZESPOLY
+[WARN] 2020-08-16 20:32:41,555 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - ZESPOLY
+[WARN] 2020-08-16 20:32:41,556 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - ETATY
+[WARN] 2020-08-16 20:32:41,556 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - ETATY
+[WARN] 2020-08-16 20:32:41,556 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - ETATY
+[WARN] 2020-08-16 20:32:41,556 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - ETATY
+[WARN] 2020-08-16 20:32:41,556 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - ETATY
+[WARN] 2020-08-16 20:32:41,556 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - ETATY
+[WARN] 2020-08-16 20:32:41,557 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - PRACOWNICY
+[WARN] 2020-08-16 20:32:41,557 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - PRACOWNICY
+[WARN] 2020-08-16 20:32:41,557 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - PRACOWNICY
+[WARN] 2020-08-16 20:32:41,557 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - PRACOWNICY
+[WARN] 2020-08-16 20:32:41,557 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - PRACOWNICY
+[WARN] 2020-08-16 20:32:41,557 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - PRACOWNICY
+[WARN] 2020-08-16 20:32:41,557 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - PRACOWNICY
+[WARN] 2020-08-16 20:32:50,048 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT COLUMN_NAME FROM ALL_TAB_COLS WHERE TABLE_NAME LIKE '%NAZWISKA%' AND OWNER LIKE '%TOMEK%'
+[WARN] 2020-08-16 20:32:50,048 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT COLUMN_NAME FROM ALL_TAB_COLS WHERE TABLE_NAME LIKE '%NAZWISKA%' AND OWNER LIKE '%TOMEK%'
+[WARN] 2020-08-16 20:32:50,048 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT COLUMN_NAME FROM ALL_TAB_COLS WHERE TABLE_NAME LIKE '%NAZWISKA%' AND OWNER LIKE '%TOMEK%'
+[WARN] 2020-08-16 20:32:50,048 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT COLUMN_NAME FROM ALL_TAB_COLS WHERE TABLE_NAME LIKE '%NAZWISKA%' AND OWNER LIKE '%TOMEK%'
+[WARN] 2020-08-16 20:32:50,048 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT COLUMN_NAME FROM ALL_TAB_COLS WHERE TABLE_NAME LIKE '%NAZWISKA%' AND OWNER LIKE '%TOMEK%'
+[WARN] 2020-08-16 20:32:50,048 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT COLUMN_NAME FROM ALL_TAB_COLS WHERE TABLE_NAME LIKE '%NAZWISKA%' AND OWNER LIKE '%TOMEK%'
+[WARN] 2020-08-16 20:32:50,048 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT COLUMN_NAME FROM ALL_TAB_COLS WHERE TABLE_NAME LIKE '%NAZWISKA%' AND OWNER LIKE '%TOMEK%'
+[WARN] 2020-08-16 20:32:50,048 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - SELECT COLUMN_NAME FROM ALL_TAB_COLS WHERE TABLE_NAME LIKE '%NAZWISKA%' AND OWNER LIKE '%TOMEK%'
+[WARN] 2020-08-16 20:32:50,490 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - NAZWISKO
+[WARN] 2020-08-16 20:32:50,490 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - NAZWISKO
+[WARN] 2020-08-16 20:32:50,490 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - NAZWISKO
+[WARN] 2020-08-16 20:32:50,490 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - NAZWISKO
+[WARN] 2020-08-16 20:32:50,490 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - NAZWISKO
+[WARN] 2020-08-16 20:32:50,490 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - NAZWISKO
+[WARN] 2020-08-16 20:32:50,490 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - NAZWISKO
+[WARN] 2020-08-16 20:32:50,490 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - NAZWISKO
+[WARN] 2020-08-16 20:32:50,490 pl.venustus.OracleDataModify.Service.OracleServices makeLogger - NAZWISKO

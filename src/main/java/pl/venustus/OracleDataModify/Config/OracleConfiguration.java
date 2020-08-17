@@ -69,6 +69,7 @@ public class OracleConfiguration {
 
     @Bean
     DataSource dataSource() throws SQLException {
+        setDataSourceProperties();
         System.out.println("Data source: " + url + "|" + username + "|" + password);
         OracleDataSource dataSource = new OracleDataSource();
         dataSource.setUser(username);
