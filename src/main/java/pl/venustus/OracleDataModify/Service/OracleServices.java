@@ -20,11 +20,14 @@ public class OracleServices {
     @Autowired
     private OracleConnection oracleConnection;
 
-    @Autowired
-    private FileLogger fileLogger;
+//    @Autowired
+//    private FileLogger fileLogger;
 
     @Autowired
     private DynamicRollingLogFile dynamicRollingLogFile;
+
+    @Autowired
+    private DynamicRollingLogFile2 dynamicRollingLogFile2;
 
     public List<String> executeSelectStatusByVariable(String surname, String data0, String data1) throws SQLException {
         System.out.println(surname);
@@ -122,12 +125,12 @@ public class OracleServices {
         return resultList;
     }
 
-    public List<String> selectAllcolumsFromTable(String tableName) throws SQLException {
+    public List<String> selectAllColumsFromTable(String tableName) throws SQLException {
 
         String sql = "SELECT COLUMN_NAME FROM ALL_TAB_COLS WHERE TABLE_NAME LIKE '%" + tableName.toUpperCase() +
                 "%' AND OWNER LIKE '%" + username.toUpperCase() + "%'";
         System.out.println(sql);
-        dynamicRollingLogFile.makeLogger("info", sql);
+        dynamicRollingLogFile2.makeLogger("info", sql);
         String result = "";
         Integer rowCount = 0;
         List<String> resultList = new ArrayList<>();
@@ -137,14 +140,14 @@ public class OracleServices {
             ResultSet rs = statement.executeQuery(sql);
             while (rs.next()) {
                 //System.out.println(rs.getString(1));
-                dynamicRollingLogFile.makeLogger("info", rs.getString(1));
+                dynamicRollingLogFile2.makeLogger("info", rs.getString(1));
                 result = result + rs.getString(1) + "\n";
                 resultList.add(rs.getString(1));
                 rowCount++;
             }
         } catch (Exception e) {
             result = e.getMessage();
-            dynamicRollingLogFile.makeLogger("error", result);
+            dynamicRollingLogFile2.makeLogger("error", result);
             System.out.println(result);
         }
 
