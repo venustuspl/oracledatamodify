@@ -14,6 +14,7 @@ public class OracleConnection {
 
     public Connection makeConnection() throws SQLException {
         //oracleConfiguration.setDataSourceProperties();
+
         Connection connection = oracleConfiguration.dataSource().getConnection();
         return connection;
     }
