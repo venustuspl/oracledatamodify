@@ -49,7 +49,7 @@ public class OracleServices {
                 //System.out.println(rs.getString(2));
                 dynamicRollingLogFile.makeLogger("info", rs.getString(2));
                 result = result + rs.getString(2) + "\n";
-                resultList.add(rs.getString(2) + " | " + rs.getString(3) + " | " + rs.getString(4));
+                resultList.add(rs.getString(1) + " | " + rs.getString(2) + " | " + rs.getString(3) + " | " + rs.getString(73) + " | " + rs.getString(77));
                 rowCount++;
             }
         } catch (Exception e) {

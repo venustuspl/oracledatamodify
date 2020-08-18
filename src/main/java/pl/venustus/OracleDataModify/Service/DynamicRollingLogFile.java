@@ -17,7 +17,7 @@ public class DynamicRollingLogFile {
 
         // Create Daily Rolling Log File Appender
         DailyRollingFileAppender rollingAppenderObj = new DailyRollingFileAppender();
-        rollingAppenderObj.setFile("OracleApp.log");
+        rollingAppenderObj.setFile("bin/OracleApp.log");
         rollingAppenderObj.setDatePattern("yyyy-MM-dd'.log'");
         rollingAppenderObj.setLayout(patternLayoutObj);
         rollingAppenderObj.activateOptions();
