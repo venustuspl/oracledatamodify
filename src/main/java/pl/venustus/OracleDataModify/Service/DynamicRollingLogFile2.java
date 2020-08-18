@@ -11,7 +11,7 @@ public class DynamicRollingLogFile2 {
 
     public void makeLogger(String logType, String logText) {
         // Creates Pattern Layout
-        // Creates Pattern Layout
+
         PatternLayout patternLayoutObj = new PatternLayout();
         String conversionPattern = "[%p] %d %c %M - %m%n";
         patternLayoutObj.setConversionPattern(conversionPattern);
