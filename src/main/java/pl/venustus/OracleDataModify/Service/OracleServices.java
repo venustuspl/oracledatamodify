@@ -101,7 +101,7 @@ public class OracleServices {
 
         String sql = "SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%" + username.toUpperCase() + "%'";
         System.out.println(sql);
-        dynamicRollingLogFile.makeLogger("info", sql);
+        dynamicRollingLogFile2.makeLogger("info", sql);
         String result = "";
         Integer rowCount = 0;
         List<String> resultList = new ArrayList<>();
@@ -111,14 +111,14 @@ public class OracleServices {
             ResultSet rs = statement.executeQuery(sql);
             while (rs.next()) {
                 //System.out.println(rs.getString(2));
-                dynamicRollingLogFile.makeLogger("info", rs.getString(2));
+                dynamicRollingLogFile2.makeLogger("info", rs.getString(2));
                 result = result + rs.getString(2) + "\n";
                 resultList.add(rs.getString(2));
                 rowCount++;
             }
         } catch (Exception e) {
             result = e.getMessage();
-            dynamicRollingLogFile.makeLogger("error", result);
+            dynamicRollingLogFile2.makeLogger("error", result);
             System.out.println(result);
         }
 

@@ -1,6 +1,7 @@
 package pl.venustus.OracleDataModify.Service;
 
 import org.apache.log4j.DailyRollingFileAppender;
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PatternLayout;
 import org.springframework.context.annotation.Bean;
@@ -18,7 +19,7 @@ public class DynamicRollingLogFile2 {
 
         // Create Daily Rolling Log File Appender
         DailyRollingFileAppender rollingAppenderObj = new DailyRollingFileAppender();
-        rollingAppenderObj.setFile("bin/OracleApp.log");
+        rollingAppenderObj.setFile("bin/OracleAppp.log");
         rollingAppenderObj.setDatePattern("yyyy-MM-dd'.log'");
         rollingAppenderObj.setLayout(patternLayoutObj);
         rollingAppenderObj.activateOptions();
@@ -47,7 +48,7 @@ public class DynamicRollingLogFile2 {
         }
     }
         @Bean
-        public Logger makeLoggerObj(String logType, String logText) {
+        public Logger makeLoggerObj() {
             // Creates Pattern Layout
             // Creates Pattern Layout
             PatternLayout patternLayoutObj = new PatternLayout();
@@ -56,14 +57,14 @@ public class DynamicRollingLogFile2 {
 
             // Create Daily Rolling Log File Appender
             DailyRollingFileAppender rollingAppenderObj = new DailyRollingFileAppender();
-            rollingAppenderObj.setFile("bin/OracleApp.log");
+            rollingAppenderObj.setFile("bin/OracleAppp.log");
             rollingAppenderObj.setDatePattern("yyyy-MM-dd'.log'");
             rollingAppenderObj.setLayout(patternLayoutObj);
             rollingAppenderObj.activateOptions();
 
             // Configure the Root Logger
             Logger rootLoggerObj = Logger.getRootLogger();
-            // rootLoggerObj.setLevel(Level.DEBUG);
+            rootLoggerObj.setLevel(Level.DEBUG);
             rootLoggerObj.addAppender(rollingAppenderObj);
 
             // Create a Customer Logger & Logs Messages

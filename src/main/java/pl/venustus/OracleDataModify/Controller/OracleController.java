@@ -34,7 +34,7 @@ public class OracleController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/getalltablecolums")
     public List<String> getAllTableColumns(@RequestParam("tablename") String tablename) throws SQLException {
-        return oracleServices.selectAllcolumsFromTable(tablename);
+        return oracleServices.selectAllColumsFromTable(tablename);
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/userqueryresult")
