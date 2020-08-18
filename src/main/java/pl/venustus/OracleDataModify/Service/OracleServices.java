@@ -1,7 +1,6 @@
 package pl.venustus.OracleDataModify.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 import pl.venustus.OracleDataModify.Config.OracleConnection;
 
@@ -15,8 +14,8 @@ import java.util.List;
 @Repository
 public class OracleServices {
 
-    @Value("${spring.datasource.username}")
-    private String username;
+    //@Value("${spring.datasource.username}")
+    private final String username = "skome";
 
     @Autowired
     private OracleConnection oracleConnection;
