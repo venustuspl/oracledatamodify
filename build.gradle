@@ -8,8 +8,8 @@ group = 'pl.venustus'
 version = '1.6.'
 
 compileJava   {
-	sourceCompatibility = '1.10'
-	targetCompatibility = '1.10'
+	sourceCompatibility = '1.8'
+	targetCompatibility = '1.8'
 }
 configurations {
 	compileOnly {

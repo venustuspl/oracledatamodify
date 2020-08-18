@@ -69,6 +69,24 @@ public class OracleConfiguration {
 
     @Bean
     DataSource dataSource() throws SQLException {
+        try {
+            System.out.println("File searching...");
+            File myObj = new File("bin/settings.txt");
+            Scanner myReader = new Scanner(myObj);
+
+            setUrl(myReader.nextLine());
+            setUsername(myReader.nextLine());
+            setPassword(myReader.nextLine());
+            System.out.println(url + username + password);
+
+            //FileWriter fileWriter = new FileWriter(myObj);
+            //fileWriter.append(String.valueOf(LocalDateTime.now()));
+            //fileWriter.close();
+            myReader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println(e.getMessage());
+
+        }
         System.out.println("Data source: " + url + "|" + username + "|" + password);
         OracleDataSource dataSource = new OracleDataSource();
         dataSource.setUser(username);

@@ -13,7 +13,7 @@ public class OracleConnection {
     OracleConfiguration oracleConfiguration;
 
     public Connection makeConnection() throws SQLException {
-        oracleConfiguration.setDataSourceProperties();
+        //oracleConfiguration.setDataSourceProperties();
         Connection connection = oracleConfiguration.dataSource().getConnection();
         return connection;
     }
