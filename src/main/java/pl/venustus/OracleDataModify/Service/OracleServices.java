@@ -38,6 +38,7 @@ public class OracleServices {
         if (data1.length() > 0) {
             sql = sql + "AND I_BMR_DTTO <= TO_DATE('" + data1 + "', 'yyyy/mm/dd') ";
         }
+        sql = sql + "AND I_BMR_BILLINGREADFLAG = 0";
         dynamicRollingLogFile.makeLogger("info", sql);
         System.out.println(sql);
 
@@ -52,7 +53,7 @@ public class OracleServices {
                 //System.out.println(rs.getString(2));
                 dynamicRollingLogFile.makeLogger("info", rs.getString(2));
                 result = result + rs.getString(2) + "\n";
-                resultList.add(rs.getString(1) + " | " + rs.getString(2) + " | " + rs.getString(3) + " | " + rs.getString(73) + " | " + rs.getString(77));
+                resultList.add(rs.getString(1) + " | " + rs.getString(2) + " | " + rs.getString(3) + " | " + rs.getString(4) + " | " + rs.getString(73) + " | " + rs.getString(77));
                 rowCount++;
             }
         } catch (Exception e) {
@@ -80,13 +81,15 @@ public class OracleServices {
         } else {
             sql = sql + "AND I_BMR_CORRECTION = 0 ";
         }
+       // sql = sql + "; commit";
         dynamicRollingLogFile.makeLogger("info", sql);
-        System.out.println(sql);
         String result = "";
         try {
+            System.out.println(sql);
             Statement statement = oracleConnection.makeConnection().createStatement();
-            Integer rs = statement.executeUpdate(sql + "; commit");
+            Integer rs = statement.executeUpdate(sql);
             result = String.valueOf(rs);
+            System.out.println(rs);
             dynamicRollingLogFile.makeLogger("info", result);
         } catch (
                 Exception e) {
