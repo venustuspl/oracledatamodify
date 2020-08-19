@@ -30,7 +30,7 @@ public class DynamicRollingLogFile2 {
         rootLoggerObj.addAppender(rollingAppenderObj);
 
         // Create a Customer Logger & Logs Messages
-        Logger loggerObj = Logger.getLogger(OracleServices.class);
+        Logger loggerObj = Logger.getLogger(OracleService.class);
 //
 //        switch (logType) {
 //            case "info":
@@ -68,7 +68,7 @@ public class DynamicRollingLogFile2 {
             rootLoggerObj.addAppender(rollingAppenderObj);
 
             // Create a Customer Logger & Logs Messages
-            Logger loggerObj = Logger.getLogger(OracleServices.class);
+            Logger loggerObj = Logger.getLogger(OracleService.class);
 
             return loggerObj;
 

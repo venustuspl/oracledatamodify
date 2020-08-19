@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class OracleServices {
+public class OracleService {
 
     //@Value("${spring.datasource.username}")
     private final String username = "skome";

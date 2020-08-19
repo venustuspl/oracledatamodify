@@ -2,7 +2,7 @@ package pl.venustus.OracleDataModify.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import pl.venustus.OracleDataModify.Service.OracleServices;
+import pl.venustus.OracleDataModify.Service.OracleService;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -15,26 +15,26 @@ public class OracleController {
 
 
     @Autowired
-    OracleServices oracleServices;
+    OracleService oracleService;
 
     @RequestMapping(method = RequestMethod.GET, value = "/getnotinvoicedor")
     public List<String> getNotInvoicedOr(@RequestParam("name") String name, @RequestParam("data0") String data0, @RequestParam("data1") String data1) throws IOException, SQLException {
-        return oracleServices.executeSelectStatusByVariable(name, data0, data1);
+        return oracleService.executeSelectStatusByVariable(name, data0, data1);
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/marknotinvoicedor")
     public String markNotInvoicedOr(@RequestParam("name") String name, @RequestParam("data0") String data0, @RequestParam("data1") String data1, @RequestParam("iscorrection") Boolean iscorrection) throws IOException, SQLException {
-        return oracleServices.executeSetStatusByVariable(name, data0, data1, iscorrection);
+        return oracleService.executeSetStatusByVariable(name, data0, data1, iscorrection);
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/getallusertables")
     public List<String> getAllUserTables() throws IOException, SQLException {
-        return oracleServices.selectAllUserTables();
+        return oracleService.selectAllUserTables();
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/getalltablecolums")
     public List<String> getAllTableColumns(@RequestParam("tablename") String tablename) throws SQLException {
-        return oracleServices.selectAllColumsFromTable(tablename);
+        return oracleService.selectAllColumsFromTable(tablename);
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/userqueryresult")
@@ -42,7 +42,7 @@ public class OracleController {
                                              @RequestParam("columnname") String columnname,
                                              @RequestParam("columnvalue") String columnvalue)
             throws SQLException {
-        return oracleServices.getDataFromUserSelect(tablename, columnname, columnvalue);
+        return oracleService.getDataFromUserSelect(tablename, columnname, columnvalue);
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/updateuserqueryresult")
@@ -51,6 +51,6 @@ public class OracleController {
                                           @RequestParam("oldcolumnvalue") String oldcolumnvalue,
                                           @RequestParam("newcolumnvalue") String newcolumnvalue)
             throws SQLException {
-        return oracleServices.updateDataFromUserSelect(tablename, columnname, oldcolumnvalue, newcolumnvalue);
+        return oracleService.updateDataFromUserSelect(tablename, columnname, oldcolumnvalue, newcolumnvalue);
     }
 }
