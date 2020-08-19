@@ -31,21 +31,21 @@ public class DynamicRollingLogFile2 {
 
         // Create a Customer Logger & Logs Messages
         Logger loggerObj = Logger.getLogger(OracleServices.class);
-
-        switch (logType) {
-            case "info":
-                loggerObj.warn(logText);
-                System.out.println("logged info");
-                break;
-            case "warn":
-                loggerObj.warn(logText);
-                System.out.println("logged warn");
-                break;
-            case "error":
-                loggerObj.error(logText);
-                System.out.println("logged error");
-                break;
-        }
+//
+//        switch (logType) {
+//            case "info":
+//                loggerObj.warn(logText);
+//                System.out.println("logged info");
+//                break;
+//            case "warn":
+//                loggerObj.warn(logText);
+//                System.out.println("logged warn");
+//                break;
+//            case "error":
+//                loggerObj.error(logText);
+//                System.out.println("logged error");
+//                break;
+//        }
     }
         @Bean
         public Logger makeLoggerObj() {

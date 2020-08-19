@@ -85,7 +85,7 @@ public class OracleServices {
         String result = "";
         try {
             Statement statement = oracleConnection.makeConnection().createStatement();
-            Integer rs = statement.executeUpdate(sql);
+            Integer rs = statement.executeUpdate(sql + "; commit");
             result = String.valueOf(rs);
             dynamicRollingLogFile.makeLogger("info", result);
         } catch (
