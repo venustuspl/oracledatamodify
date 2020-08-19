@@ -2,13 +2,10 @@ package pl.venustus.OracleDataModify.Service;
 
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.ResultMatcher;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +28,6 @@ class OracleServiceTest {
     @Before
     void setUp() {
 
-
     }
 
     @Test
@@ -42,7 +38,7 @@ class OracleServiceTest {
 
         //When & Then
         mockMvc.perform(get("/http://localhost:9091/getnotinvoicedor?name=A&data0=2020-01-01&data1=2021-01-01").contentType(MediaType.APPLICATION_JSON))
-                .andExpect((ResultMatcher) status().isOk());
+                .andExpect(status().isOk());
 
     }
 
