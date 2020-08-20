@@ -37,7 +37,7 @@ class OracleServiceTest {
         when(oracleService.executeSelectStatusByVariable("A", "2020-01-01", "2021-01-01")).thenReturn(resultList);
 
         //When & Then
-        mockMvc.perform(get("/http://localhost:9091/getnotinvoicedor?name=A&data0=2020-01-01&data1=2021-01-01").contentType(MediaType.APPLICATION_JSON))
+        mockMvc.perform(get("/getnotinvoicedor?name=A&data0=2020-01-01&data1=2021-01-01").contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
 
     }
