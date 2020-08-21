@@ -6,12 +6,20 @@ function append(parent, el) {
     return parent.appendChild(el); // Append the second parameter(element) to the first one
 }
 
+function init(){
+fetch('/getconnectioninfo')
+    .then(response => response.text())
+    .then(text => document.getElementById('connectioninfo').innerHTML = text);
+
+}
+
 const niol = document.getElementById('notinvoicedorlist');
 const aut = document.getElementById('allusertables');
 const acot = document.getElementById('allcolumsoftable');
 const uqr = document.getElementById('userqueryresult');
 const ur = document.getElementById('updatedrows');
 const ic = document.getElementById('iscorrection');
+
 
 function getnotinvoicedor(){
 
@@ -131,3 +139,4 @@ fetch(updatequerylink)
       .then(data => ur.innerHTML = data);
 
 }
+

@@ -67,6 +67,18 @@ public class OracleConfiguration {
         this.url = url;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
     @Bean
     DataSource dataSource() throws SQLException {
         try {

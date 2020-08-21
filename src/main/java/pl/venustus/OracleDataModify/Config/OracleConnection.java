@@ -19,4 +19,8 @@ public class OracleConnection {
         return connection;
     }
 
+    public String getConnectionInfo() {
+        return " to: " + oracleConfiguration.getUrl() + " as " + oracleConfiguration.getUsername();
+    }
+
 }

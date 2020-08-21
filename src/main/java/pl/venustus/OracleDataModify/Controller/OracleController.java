@@ -53,4 +53,9 @@ public class OracleController {
             throws SQLException {
         return oracleService.updateDataFromUserSelect(tablename, columnname, oldcolumnvalue, newcolumnvalue);
     }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/getconnectioninfo")
+    public String getConnectionInvo() {
+        return oracleService.getConnectionInfo();
+    }
 }

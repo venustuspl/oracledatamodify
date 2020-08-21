@@ -203,4 +203,8 @@ public class OracleService {
         }
         return result;
     }
+
+    public String getConnectionInfo() {
+        return oracleConnection.getConnectionInfo();
+    }
 }

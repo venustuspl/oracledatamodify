@@ -9,7 +9,6 @@
     <link href="style.css" rel="stylesheet" type="text/css"/>
 
     <meta content="width=device-width,initial-scale=1" name="viewport">
-    <link href="form.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <meta content="origin" name="referrer">
@@ -17,7 +16,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
 </head>
 
-<body style="background-color: white; background-image: url('orackle_jdk.jpg');background-repeat:no-repeat;  background-position: center; ">
+<body onload="init()"
+      style="background-color: white; background-image: url('orackle_jdk.jpg');background-repeat:no-repeat;  background-position: center; ">
 
 
 <h1 align="center" style="background-color: white;">OracleApp</h1>
@@ -25,7 +25,14 @@
     Oracle database.</h2>
 <hr>
 <h3> 1. First function - mark OR as invoiced</h3>
-<button align="right" id="closeappbutton" onclick="location.href='/actuator/shutdown'">Close App.</button>
+<form align="right" method="put">
+    <button align="right" id="closeappbutton" onclick="location.href='/actuator/shutdown'">Close App.</button>
+    <input onclick="location.href='/actuator/shutdown'" type="submit" value="Submit"></p>
+</form>
+<h4 align="right">You are connected
+    <div id="connectioninfo">________</div>
+</h4>
+
 <h4>Enter PPE full number:</h4>
 <input id="ppe" type="text" minlength="1"><br>
 <h4>Enter start date: </h4>
