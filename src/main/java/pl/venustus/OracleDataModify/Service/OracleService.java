@@ -39,7 +39,7 @@ public class OracleService {
             sql = sql + "AND I_BMR_DTTO <= TO_DATE('" + data1 + "', 'yyyy/mm/dd') ";
         }
         sql = sql + "AND I_BMR_BILLINGREADFLAG = 0";
-        dynamicRollingLogFile.makeLogger("info", sql);
+        //dynamicRollingLogFile.makeLogger("info", sql);
         System.out.println(sql);
 
         String result = "";
