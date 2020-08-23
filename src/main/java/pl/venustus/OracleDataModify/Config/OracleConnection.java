@@ -23,4 +23,7 @@ public class OracleConnection {
         return " to: " + oracleConfiguration.getUrl() + " as " + oracleConfiguration.getUsername();
     }
 
+    public String getConnectionUsername() {
+        return oracleConfiguration.getUsername();
+    }
 }

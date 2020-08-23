@@ -54,6 +54,14 @@ public class OracleController {
         return oracleService.updateDataFromUserSelect(tablename, columnname, oldcolumnvalue, newcolumnvalue);
     }
 
+    @RequestMapping(method = RequestMethod.GET, value = "/getcounteddatafromuserselect")
+    public String getCountedDataFromUserQuery(@RequestParam("tablename") String tablename,
+                                              @RequestParam("columnname") String columnname,
+                                              @RequestParam("columnvalue") String columnvalue)
+            throws SQLException {
+        return oracleService.getCountedDataFromUserSelect(tablename, columnname, columnvalue);
+    }
+
     @RequestMapping(method = RequestMethod.GET, value = "/getconnectioninfo")
     public String getConnectionInvo() {
         return oracleService.getConnectionInfo();

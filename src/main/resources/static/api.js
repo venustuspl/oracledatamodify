@@ -19,6 +19,7 @@ const acot = document.getElementById('allcolumsoftable');
 const uqr = document.getElementById('userqueryresult');
 const ur = document.getElementById('updatedrows');
 const ic = document.getElementById('iscorrection');
+const cr = document.getElementById('usercountqueryresult');
 
 
 function getnotinvoicedor(){
@@ -137,6 +138,22 @@ ur.innerHTML = '';
 fetch(updatequerylink)
       .then(response => response.text())
       .then(data => ur.innerHTML = data);
+
+}
+
+function getcounteddatafromuserselect(){
+var tablename = document.getElementById("allusertables").value;
+var columnname = document.getElementById("allcolumsoftable").value;
+var columnvalue = document.getElementById("columnvalue").value;
+var querylink = "/getcounteddatafromuserselect?tablename=" + tablename + "&columnname=" + columnname + "&columnvalue=" + columnvalue;
+
+//var query = "SELECT * FROM " + tablename + " WHERE " + columnname + " LIKE '%" + columnvalue + "%'";
+//console.log(query);
+//document.getElementById("userquery").innerHTML = "SELECT * FROM " + tablename + " WHERE " + columnname + " LIKE '%" + columnvalue + "%'";
+
+fetch(querylink)
+    .then(response => response.text())
+    .then(text => cr.innerHTML = text);
 
 }
 

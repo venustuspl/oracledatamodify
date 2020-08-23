@@ -14,11 +14,11 @@ import java.util.List;
 @Repository
 public class OracleService {
 
-    //@Value("${spring.datasource.username}")
-    private final String username = "skome";
-
     @Autowired
     private OracleConnection oracleConnection;
+
+    //@Value("${spring.datasource.username}")
+    private final String username = "tomek";
 
 //    @Autowired
 //    private FileLogger fileLogger;
@@ -81,7 +81,7 @@ public class OracleService {
         } else {
             sql = sql + "AND I_BMR_CORRECTION = 0 ";
         }
-       // sql = sql + "; commit";
+        // sql = sql + "; commit";
         dynamicRollingLogFile.makeLogger("info", sql);
         String result = "";
         try {
@@ -104,7 +104,7 @@ public class OracleService {
 
         String sql = "SELECT * FROM ALL_TABLES WHERE OWNER LIKE '%" + username.toUpperCase() + "%'";
         System.out.println(sql);
-        dynamicRollingLogFile2.makeLogger("info", sql);
+        //dynamicRollingLogFile2.makeLogger("info", sql);
         String result = "";
         Integer rowCount = 0;
         List<String> resultList = new ArrayList<>();
@@ -114,7 +114,7 @@ public class OracleService {
             ResultSet rs = statement.executeQuery(sql);
             while (rs.next()) {
                 //System.out.println(rs.getString(2));
-                dynamicRollingLogFile2.makeLogger("info", rs.getString(2));
+                //  dynamicRollingLogFile2.makeLogger("info", rs.getString(2));
                 result = result + rs.getString(2) + "\n";
                 resultList.add(rs.getString(2));
                 rowCount++;
@@ -133,7 +133,7 @@ public class OracleService {
         String sql = "SELECT COLUMN_NAME FROM ALL_TAB_COLS WHERE TABLE_NAME LIKE '%" + tableName.toUpperCase() +
                 "%' AND OWNER LIKE '%" + username.toUpperCase() + "%'";
         System.out.println(sql);
-        dynamicRollingLogFile2.makeLogger("info", sql);
+        //dynamicRollingLogFile2.makeLogger("info", sql);
         String result = "";
         Integer rowCount = 0;
         List<String> resultList = new ArrayList<>();
@@ -143,7 +143,7 @@ public class OracleService {
             ResultSet rs = statement.executeQuery(sql);
             while (rs.next()) {
                 //System.out.println(rs.getString(1));
-                dynamicRollingLogFile2.makeLogger("info", rs.getString(1));
+                //      dynamicRollingLogFile2.makeLogger("info", rs.getString(1));
                 result = result + rs.getString(1) + "\n";
                 resultList.add(rs.getString(1));
                 rowCount++;
@@ -160,7 +160,7 @@ public class OracleService {
     public List<String> getDataFromUserSelect(String tableName, String columnName, String columnValue) throws SQLException {
 
         String sql = "SELECT * FROM " + tableName + " WHERE " + columnName + " LIKE '%" + columnValue + "%'";
-        dynamicRollingLogFile.makeLogger("info", sql);
+        //dynamicRollingLogFile.makeLogger("info", sql);
         System.out.println(sql);
         Integer rowCount = 0;
         List<String> resultList = new ArrayList<>();
@@ -206,5 +206,31 @@ public class OracleService {
 
     public String getConnectionInfo() {
         return oracleConnection.getConnectionInfo();
+    }
+
+
+    public String getCountedDataFromUserSelect(String tableName, String columnName, String columnValue) throws SQLException {
+
+        String sql = "SELECT count(*) FROM " + tableName + " WHERE " + columnName + " LIKE '%" + columnValue + "%'";
+        //dynamicRollingLogFile.makeLogger("info", sql);
+        System.out.println(sql);
+        Integer rowCount = 0;
+        List<String> resultList = new ArrayList<>();
+        String result = "";
+
+        try {
+            Statement statement = oracleConnection.makeConnection().createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            while (rs.next()) {
+                //ystem.out.println(rs.getString(1));
+                dynamicRollingLogFile.makeLogger("info", rs.getString(1));
+                resultList.add(rs.getString(1));
+            }
+        } catch (Exception e) {
+            resultList.add(e.getMessage());
+            dynamicRollingLogFile.makeLogger("error", e.getMessage());
+        }
+
+        return String.valueOf(resultList.get(0));
     }
 }
