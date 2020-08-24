@@ -18,7 +18,7 @@ public class OracleService {
     private OracleConnection oracleConnection;
 
     //@Value("${spring.datasource.username}")
-    private final String username = "tomek";
+    private final String username = "skome";
 
 //    @Autowired
 //    private FileLogger fileLogger;
