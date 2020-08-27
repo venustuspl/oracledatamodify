@@ -69,7 +69,7 @@ public class OracleService {
     public String executeSetStatusByVariable(String surname, String data0, String data1, Boolean iscorrection) throws SQLException {
 
         System.out.println(surname);
-        String sql = "UPDATE I_BILLING_MEASURE_REGISTER SET I_BMR_BILLINGREADFLAG = 1, I_BMR_STATUS_DESC = 'OR zafakturowany' WHERE I_BMR_PPE LIKE '%" + surname + "%' ";
+        String sql = "UPDATE I_BILLING_MEASURE_REGISTER SET I_BMR_BILLINGREADFLAG = 1, I_BMR_STATUS_DESC = 'OR zafakturowany', I_BMR_CMD_ARGUMENTS = 'ORACLEAPP' WHERE I_BMR_PPE LIKE '%" + surname + "%' ";
         if (data0.length() > 0) {
             sql = sql + "AND I_BMR_DTFROM >= TO_DATE('" + data0 + "', 'yyyy/mm/dd') ";
         }
